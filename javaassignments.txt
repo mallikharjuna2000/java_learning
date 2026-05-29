@@ -1,0 +1,229 @@
+Day-5
+=========
+Problem Statement-1
+A shopkeeper calculates the final cost of an item by applying a discount and adding a surcharge. Read the initial price, discount amount, surcharge amount, and a target budget from the user. Use assignment operators to update the price and print the final cost, then print 'true' if the final cost is both greater than zero and less than or equal to the budget.
+Constraints
+0 <= Price, Discount, Surcharge, Budget <= 10^6
+Total Time Limit: 2s
+Input Format
+Four integers (Initial Price, Discount, Surcharge, Budget) each on a new line.
+Output Format
+The updated final cost and the logical check result (true/false) on separate lines.
+Sample Test Cases
+Input
+50
+10
+5
+40
+Expected Output
+45
+false
+Input
+200
+50
+25
+180
+Expected Output
+175
+true
+Input
+10
+15
+2
+20
+Expected Output
+-3
+false
+Input
+1000000
+0
+0
+1000000
+Expected Output
+1000000
+true
+--------------------------------------------------------------------------------
+Problem Statement-2
+A game developer needs to calculate a player's score by adding a base value and a bonus, then doubling the result using an arithmetic assignment operator. Write a program to calculate this total and check if the final total is greater than 50 and the original bonus was an odd number.
+Constraints
+1 <= baseScore, bonus <= 1000
+Total Time Limit: 2s
+Input Format
+Two integers representing baseScore and bonus on separate lines.
+Output Format
+The doubled total score and the boolean result on separate lines.
+Sample Test Cases
+Input
+5
+5
+Expected Output
+20
+false
+Input
+25
+2
+Expected Output
+54
+false
+Input
+30
+3
+Expected Output
+66
+true
+Input
+1000
+999
+Expected Output
+3998
+true
+------------------------------------------------------------------
+Problem Statement-3)
+A warehouse manager calculates the final value of an order by adding a 10% tax to the base cost (price multiplied by quantity). Write a program to calculate this final value and check if the order is valid. The order is valid only if the final value is within the given budget and the quantity is at least 1.
+Constraints
+0.0 <= unitPrice <= 1000.0
+0 <= quantity <= 1000
+0.0 <= budget <= 2000000.0
+Input Format
+Three lines representing unit price (double), quantity (int), and budget (double).
+Output Format
+The final cost followed by the validity result (true/false) on new lines.
+Sample Test Cases
+Input
+50.0
+4
+200.0
+Expected Output
+220.0
+false
+Input
+10.0
+0
+100.0
+Expected Output
+0.0
+false
+Input
+1000.0
+1000
+1100000.0
+Expected Output
+1100000.0
+true
+Input
+1.0
+1
+1.1
+Expected Output
+1.1
+true
+------------------------------------------------------------------------------------
+Problem Statement-4)
+A dairy company uses an automated milk quality management system to monitor the composition of milk and water in storage containers.
+Initially, a container contains milk and water in a certain ratio.
+ To adjust the concentration, some quantity of the mixture is removed and replaced with pure water.
+After replacement, the ratio of milk and water changes.
+Write a Java program that accepts:
+Initial milk ratio
+Initial water ratio
+Quantity of mixture replaced
+Final milk ratio
+Final water ratio
+from the end user and calculates the total capacity of the container.
+Input Format 
+Enter Initial Milk Ratio
+Enter Initial Water Ratio
+Enter Quantity of Mixture Replaced
+Enter Final Milk Ratio
+Enter Final Water Ratio
+
+Output Format 
+Container Capacity: X liters
+
+Constraints 
+1 <= Ratio Values <= 100
+1 <= Replaced Quantity <= 1000
+
+Hint to Solve the Problem
+Calculate the initial milk fraction using:
+                            Initial Milk Ratio 
+Initial Milk Fraction=  —-------------------------
+                                      Initial Water RatioInitial Milk Ratio​ 
+
+2. Calculate the final milk fraction using: 
+      
+                                           Final Milk Ratio
+ Final Milk Fraction=        —-----------------------
+                                         Final Water RatioFinal Milk Ratio​
+
+3. Use the mixture replacement formula to find the container capacity: 
+
+                             1−(Initial Milk FractionFinal Milk Fraction​)
+Capacity=          —-----------------------------------------------------
+                              (Final Milk Fraction)
+                       1-   —-----------------------
+                              (Initial milk Fraction​)
+
+Sample Test Case 1
+Input
+5
+3
+16
+3
+5
+Output 
+Container Capacity: 64 liters
+Sample Test Case 2
+Input
+7
+5
+24
+7
+11
+Output 
+Container Capacity: 96 liters
+-------------------------------------------------------------------------------------------
+ Problem Statement-5)
+A software company assigns three developers — Alex, Brian, and Charles — to complete a critical project module.
+Alex and Brian together can complete the work in a certain number of days.
+Brian and Charles together can complete the same work in another number of days.
+Alex and Charles together can complete it in another number of days.
+The project manager wants to know how many days all three developers working together will take to complete the project.
+Write a Java program that accepts:
+Days taken by Alex and Brian
+Days taken by Brian and Charles
+Days taken by Alex and Charles
+from the end user and calculates the number of days required for all three developers together to finish the work.
+Input Format
+Enter Days Taken by A and B
+Enter Days Taken by B and C
+Enter Days Taken by A and C
+
+Output Format
+All Three Can Complete Work In X days
+
+Constraints  
+1 <= Days <= 100
+Hint to Solve the Problem
+Combined work formula:
+2(A+B+C)=(A+B)+(B+C)+(A+C)
+After finding total work efficiency:
+                  1
+Days =   —--------
+              A+B+C
+
+Sample Test Case 1 
+Input 
+12
+15
+20
+Output 
+All Three Can Complete Work In 10 days
+Sample Test Case 2
+Input
+8
+12
+24
+Output 
+All Three Can Complete Work In 6 days
+
