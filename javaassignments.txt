@@ -667,5 +667,494 @@ Input:
  600
 Output:
  Total Bill: 3780.0
-----------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------Day-7
+======
+5.Online Shopping Cart Price Calculator
+Question:
+An e-commerce company wants to automate its billing system. The final payable amount depends on the shopping cart value, festival offers, and premium membership benefits.
+The discount rules are:
+• If the cart total is ₹10,000 or more, apply a 20% discount.
+• Otherwise, if the cart total is ₹5,000 or more, apply a 10% discount.
+• Otherwise, no cart discount is applied.
+• If it is a festival season, apply an additional 5% discount on the cart total.
+• If the customer is a premium member, apply an additional flat discount of ₹200.
+Write a Java program that accepts the cart total, festival season status, and premium membership status from the user and calculates the final payable amount.
+Input Format:
+The first line contains a double value representing the cart total.
+The second line contains a boolean value representing whether it is a festival season (true/false).
+The third line contains a boolean value representing whether the customer is a premium member (true/false).
+Output Format:
+Display:
+• Initial Amount
+• Cart Discount
+• Festival Discount
+• Premium Member Discount
+• Total Payable Amount
+
+Sample Test Case 1
+Input:
+ 12000
+ true
+ true
+Output:
+ Initial Amount: ₹12000.0
+ Discount (20%): ₹2400.0
+ Festival Discount (5%): ₹600.0
+ Premium Member Discount: ₹200.0
+ Total Payable: ₹8800.0
+
+Sample Test Case 2
+Input:
+ 7000
+ true
+ false
+Output:
+ Initial Amount: ₹7000.0
+ Discount (10%): ₹700.0
+ Festival Discount (5%): ₹350.0
+ Premium Member Discount: ₹0.0
+ Total Payable: ₹5950.0
+
+Sample Test Case 3
+Input:
+ 4000
+ false
+ true
+Output:
+ Initial Amount: ₹4000.0
+ Discount (0%): ₹0.0
+ Festival Discount (5%): ₹0.0
+ Premium Member Discount: ₹200.0
+ Total Payable: ₹3800.0
+-----------------------------------------------------------------------------------------
+6.Parking Fee Calculator
+Question:
+A smart parking management system is used in a busy shopping mall to automatically calculate parking charges based on the type of vehicle and duration of parking.
+The parking fee is calculated using the following rules:
+Vehicle Charges:
+• Car: ₹50 per hour
+• Bike: ₹30 per hour
+• Truck: ₹100 per hour
+Discount:
+• If a vehicle is parked for more than 5 hours, a 20% discount is applied to the total parking fee.
+Night-Time Surcharge:
+• If the vehicle is parked during night hours (between 6 PM and 8 AM), a 50% surcharge is applied to the total fee after the discount.
+The system should also handle cases where the parking duration crosses midnight.
+Write a Java program that accepts the vehicle type, arrival time, and departure time and calculates the final parking fee.
+Input Format:
+The first line contains a string representing the vehicle type (Car, Bike, or Truck).
+The second line contains an integer representing the arrival time in 24-hour format.
+The third line contains an integer representing the departure time in 24-hour format.
+Output Format:
+Display the total parking fee after applying the discount and surcharge (if applicable).
+Constraints:
+• Arrival and departure times are in 24-hour format.
+• If the departure time is less than the arrival time, assume the parking duration crossed midnight.
+• Apply a 20% discount for parking durations greater than 5 hours.
+• Apply a 50% surcharge for vehicles parked during night hours (6 PM to 8 AM).
+
+Sample Test Case 1
+Input:
+ car
+ 14
+ 20
+Output:
+ Total parking fee: ₹360.0
+Explanation:
+Parking Duration = 6 hours
+Base Fee = 6 × 50 = ₹300
+20% Discount = ₹60
+Fee after Discount = ₹240
+Night Surcharge = 50% of ₹240 = ₹120
+Final Fee = ₹360.0
+
+Sample Test Case 2
+Input:
+ bike
+ 10
+ 14
+Output:
+ Total parking fee: ₹120.0
+Explanation:
+Parking Duration = 4 hours
+Base Fee = 4 × 30 = ₹120
+No Discount
+No Night Surcharge
+Final Fee = ₹120.0
+
+Sample Test Case 3
+Input:
+ truck
+ 22
+ 4
+Output:
+ Total parking fee: ₹720.0
+Explanation:
+Parking Duration = 6 hours
+Base Fee = 6 × 100 = ₹600
+20% Discount = ₹120
+Fee after Discount = ₹480
+Night Surcharge = ₹240
+Final Fee = ₹720.0
+
+Sample Test Case 4
+Input:
+ car
+ 8
+ 16
+Output:
+ Total parking fee: ₹320.0
+Explanation:
+Parking Duration = 8 hours
+Base Fee = 8 × 50 = ₹400
+20% Discount = ₹80
+Fee after Discount = ₹320
+No Night Surcharge
+Final Fee = ₹320.0
+
+Sample Test Case 5
+Input:
+ bike
+ 19
+ 23
+Output:
+ Total parking fee: ₹180.0
+Explanation:
+Parking Duration = 4 hours
+Base Fee = 4 × 30 = ₹120
+No Discount
+Night Surcharge = ₹60
+Final Fee = ₹180.0
+-------------------------------------------------------------------------------------------------
+7. Day of the Week Finder
+Question:
+A digital calendar application allows users to enter a number corresponding to a day of the week and displays the day name.
+The day mapping is:
+• 1 → Sunday
+• 2 → Monday
+• 3 → Tuesday
+• 4 → Wednesday
+• 5 → Thursday
+• 6 → Friday
+• 7 → Saturday
+If the user enters any other number, display an appropriate error message.
+Write a Java program using a switch statement to determine the day of the week.
+Input Format:
+The input consists of an integer representing the day number.
+Output Format:
+Display the corresponding day name.
+Sample Test Cases
+Test Case 1
+Input:
+ 1
+Output:
+ sunday
+Test Case 2
+Input:
+ 4
+Output:
+ Wedneday
+Test Case 3
+Input:
+ 6
+Output:
+ Friday
+Test Case 4
+Input:
+ 9
+Output:
+ please provide day name between 1-7 numbers :
+-------------------------------------------------------------------------------------------
+ Vending Machine Menu System
+Question:
+A vending machine provides customers with different food and beverage options. The customer selects an item by entering a number from the menu.
+Menu:
+• 1 → Coke
+• 2 → Pepsi
+• 3 → Water
+• 4 → Snickers
+• 5 → Exit
+If the customer enters an invalid option, display an error message.
+Write a Java program using a switch statement to simulate the vending machine.
+Input Format:
+The input consists of an integer representing the menu choice.
+Output Format:
+Display the selected item or an appropriate message.
+Sample Test Cases
+Test Case 1
+Input:
+ 1
+Output:
+ You have selected Coke. Enjoy your drink!
+Test Case 2
+Input:
+ 3
+Output:
+ You have selected Water. Enjoy your drink!
+Test Case 3
+Input:
+ 4
+Output:
+ You have selected Snickers. Enjoy your snack!
+Test Case 4
+Input:
+ 5
+Output:
+ Thank you for using the Vending Machine. Have a nice day!
+------------------------------------------------------------------------------------------------
+Traffic Signal System
+Question:
+A smart traffic management system displays instructions based on the selected traffic signal color.
+Options:
+• 1 → Red
+• 2 → Yellow
+• 3 → Green
+Write a Java program using a switch statement to display the corresponding traffic instruction.
+Input Format:
+The input consists of an integer representing the signal option.
+Output Format:
+Display the traffic instruction.
+Sample Test Cases
+Test Case 1
+Input:
+ 1
+Output:
+ Stop
+Test Case 2
+Input:
+ 2
+Output:
+ Get Ready
+Test Case 3
+Input:
+ 3
+Output:
+ Go
+Test Case 4
+Input:
+ 5
+Output:
+ Invalid Signal
+----------------------------------------------------------------------
+ Arithmetic Operations Calculator
+Question:
+A calculator application allows users to perform basic arithmetic operations on two numbers.
+Menu:
+• 1 → Addition
+• 2 → Subtraction
+• 3 → Multiplication
+• 4 → Division
+If the user selects division, the program must check for division by zero.
+Write a Java program using a switch statement to perform the selected operation.
+Input Format:
+The first line contains a double value representing the first number.
+The second line contains a double value representing the second number.
+The third line contains an integer representing the operation choice.
+Output Format:
+Display the result of the selected operation.
+
+Sample Test Case 1
+Input:
+ 10
+ 20
+ 1
+Output:
+ Result: 10.0 + 20.0 = 30.0
+
+Sample Test Case 2
+Input:
+ 50
+ 20
+ 2
+Output:
+ Result: 50.0 - 20.0 = 30.0
+
+Sample Test Case 3
+Input:
+ 10
+ 5
+ 3
+Output:
+ Result: 10.0 * 5.0 = 50.0
+
+Sample Test Case 4
+Input:
+ 20
+ 0
+ 4
+Output:
+ Error: Division by zero is not allowed.
+-------------------------------------------------------------------------------------------
+ Employee Bonus Calculator
+Question:
+A company wants to automate its employee bonus calculation system. The bonus amount depends on the employee's role in the organization.
+Bonus Structure:
+• Role Code 1 (Manager) → 10% of salary as bonus
+• Role Code 2 (Developer) → 5% of salary as bonus
+• Role Code 3 (Intern) → ₹500 fixed bonus
+If the user enters an invalid role code, display "Invalid Role".
+Write a Java program using a switch statement to calculate and display the employee bonus amount.
+Input Format:
+Two integers representing:
+• Role Code
+• Salary
+Output Format:
+Display the bonus amount or "Invalid Role".
+
+Sample Test Case 1
+Input:
+ 1 50000
+Output:
+ 5000
+
+Sample Test Case 2
+Input:
+ 2 40000
+Output:
+ 2000
+
+Sample Test Case 3
+Input:
+ 3 30000
+Output:
+ 500
+
+Sample Test Case 4
+Input:
+ 5 45000
+Output:
+ Invalid Role
+---------------------------------------------------------------------------------------------
+Hotel Room Pricing System
+Question:
+A hotel management system calculates room charges based on the selected room type and the current season.
+Room Types:
+• 1 → Standard Room
+• 2 → Deluxe Room
+Season Types:
+• 1 → Peak Season
+• 2 → Off-Peak Season
+Pricing Details:
+• Standard Room during Peak Season → $100
+• Standard Room during Off-Peak Season → $80
+• Deluxe Room during Peak Season → $200
+• Deluxe Room during Off-Peak Season → $150
+If the user enters an invalid room type or season type, display "Invalid Input".
+Write a Java program using switch statements to determine the room price.
+Input Format:
+Two integers representing:
+• Room Type
+• Season Type
+Output Format:
+Display the room price or "Invalid Input".
+
+Sample Test Case 1
+Input:
+ 1 1
+Output:
+ $100
+
+Sample Test Case 2
+Input:
+ 1 2
+Output:
+ $80
+
+Sample Test Case 3
+Input:
+ 2 1
+Output:
+ $200
+
+Sample Test Case 4
+Input:
+ 5 2
+Output:
+ Invalid Input
+-------------------------------------------------------------------------------------
+14. Regional Tax Calculator
+Question:
+A government taxation department calculates income tax based on the taxpayer's region. Each region has a different tax percentage.
+Tax Rates:
+• Region Code 1 (North) → 5%
+• Region Code 2 (South) → 6%
+• Region Code 3 (East) → 7%
+• Region Code 4 (West) → 8%
+If the user enters an invalid region code, display "Invalid Region".
+Write a Java program using a switch statement to calculate and display the tax amount.
+Input Format:
+Two integers representing:
+• Region Code
+• Income
+Output Format:
+Display the tax amount or "Invalid Region".
+
+Sample Test Case 1
+Input:
+ 1 10000
+Output:
+ 500
+
+Sample Test Case 2
+Input:
+ 2 20000
+Output:
+ 1200
+
+Sample Test Case 3
+Input:
+ 4 50000
+Output:
+ 4000
+
+Sample Test Case 4
+Input:
+ 8 10000
+Output:
+ Invalid Region
+------------------------------------------------------------------------------------
+Weather Alert System
+Question:
+A weather forecasting application provides alerts based on current weather conditions and temperature.
+Condition Codes:
+• 1 → Sunny
+• 2 → Rainy
+• 3 → Stormy
+Special Rule:
+• If the weather condition is Stormy and the temperature is below 10°C, display "Severe Warning".
+• Otherwise, display the weather condition name.
+If the user enters an invalid condition code, display "Invalid Condition".
+Write a Java program using a switch statement to display the appropriate weather alert.
+Input Format:
+Two integers representing:
+• Weather Condition Code
+• Temperature in Celsius
+Output Format:
+Display the weather alert message.
+
+Sample Test Case 1
+Input:
+ 1 20
+Output:
+ Sunny
+
+Sample Test Case 2
+Input:
+ 2 25
+Output:
+ Rainy
+
+Sample Test Case 3
+Input:
+ 3 5
+Output:
+ Severe Warning
+
+Sample Test Case 4
+Input:
+ 7 30
+Output:
+ Invalid Condition
+============================================================================================
+
 
