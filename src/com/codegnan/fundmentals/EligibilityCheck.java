@@ -12,3 +12,12 @@ public class EligibilityCheck {
       scanner.close();
 	}
 }
+
+//>= positive:negative
+// greater of two number // fn>sn?fn:sn
+//marks>35?pass:fail;
+// number is divisble by 3 and 5
+// discount calculator
+//leap or not leap
+// even or odd
+
