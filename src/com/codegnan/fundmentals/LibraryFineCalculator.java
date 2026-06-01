@@ -28,9 +28,6 @@ public class LibraryFineCalculator {
 			System.out.println("Invalid Code ");
 			break;
 		}
-
 		scanner.close();
-
 	}
-
 }
