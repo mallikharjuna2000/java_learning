@@ -39,7 +39,8 @@ public class ATMExample {
 					} else {
 						balance += deposit;
 						System.out.println(
-								"Deposited $ " + deposit + " amount succesfully.." + "new Balance is : " + balance);
+								"Deposited $ " + deposit + " amount succesfully.." 
+						+ "new Balance is : " + balance);
 					}
 				}
 				break;
