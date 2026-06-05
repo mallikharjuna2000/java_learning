@@ -667,7 +667,8 @@ Input:
  600
 Output:
  Total Bill: 3780.0
----------------------------------------------------------------------------------------------------Day-7
+---------------------------------------------------------------------------------------------------
+Day-7
 ======
 5.Online Shopping Cart Price Calculator
 Question:
@@ -1156,5 +1157,1573 @@ Input:
 Output:
  Invalid Condition
 ============================================================================================
+// happy number--->
+// A number is called a Happy Number if:
+Replace the number with the sum of squares of its digits
+Repeat the process
+If it becomes 1 → Happy Number
+If it loops endlessly → Not Happy
+
+19--> 1,9 -->1+81-->82
+--> 8, 2-->64+4-->68
+--> 6, 8 --->36+64-->100
+-->1,0,0-->1,0,0-->1+0+0-->1
+
+4->16-->37-58->89->64+81->145-->1+16+25->42->16+4->20->4
+
+Given a number:
+Reverse only the even digits
+Keep odd digits in same position
+ Example:
+ Input: 123456
+ Even digits → 2,4,6 → reversed → 6,4,2
+ Output → 163452
+
+ Problem 3: Product of Digits Until Single Digit (Digital Root Variant)
+ Description:
+Keep multiplying digits of a number until it becomes a single digit.
+ Example:
+ Input: 679
+ 6×7×9 = 378 → 3×7×8 = 168 → 1×6×8 = 48 → 4×8 = 32 → 3×2 = 6
+
+ Description:
+A number is a Spy Number if:
+  Sum of digits == Product of digits
+Example:
+ 1124 → Sum = 1+1+2+4 = 8
+ Product = 1×1×2×4 = 8 
+
+ Problem 6: Check if Number is Neon Number
+ Description:
+A number is Neon if:
+  Sum of digits of its square = number
+Example:
+ 9 → 9² = 81 → 8+1 = 9 
+
+Problem 7: Swap First and Last Digit
+ Description:
+Swap the first and last digit of a number.
+ Example:
+ Input: 12345 → Output: 52341
+
+ 8. Strong Number
+ Sum of factorial of digits = number
+ Example: 145 → 1! + 4! + 5! = 145
 
 
+10. Check Automorphic Number
+ Number whose square ends with same digits
+ Example: 25 → 625
+
+============================================================================================================================================
+Array Programs
+==================
+Largest and smallest element of an array
+=================================
+
+Problem Statement
+A data analysis system stores N integer values in an array. Write a program to find and display the largest and smallest elements present in the array.
+
+Constraints
+1 <= N <= 1000
+-100000 <= Array Elements <= 100000
+
+Input Format
+The first line contains an integer N representing the size of the array.
+The second line contains N space-separated integers.
+
+Output Format
+Print the smallest element followed by the largest element.
+
+Test Case-1
+Input
+5
+10 20 5 40 15
+Output
+Smallest Element: 5
+ Largest Element: 40
+Explanation
+Array Elements:
+10 20 5 40 15
+Smallest = 5
+Largest = 40
+
+Test Case-2
+Input
+4
+-10 -20 -5 -40
+Output
+Smallest Element: -40
+ Largest Element: -5
+Explanation
+Array Elements:
+-10 -20 -5 -40
+Smallest = -40
+Largest = -5
+
+Test Case-3
+Input
+6
+100 1000 50 500 20 200
+Output
+Smallest Element: 20
+ Largest Element: 1000
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+You have been given an array a[ ] of n unique non-negative integers. Write a function to find the second largest and second smallest elements in the array. Return these two elements as another array of size 2.
+ 
+Input Format:
+An integer n, the size of the array.
+An array a[ ] of n unique non-negative integers.
+ 
+Output Format:
+An array of size 2 containing the second largest and second smallest elements.
+ 
+Sample Test Cases
+Test Case 1
+ Expected Output
+Enter the Size of the Array :
+4
+Enter the array Elements :
+3 4 5 1
+Second Largest and Second Smallest Elements : 4 3
+
+Test Case 2
+Expected Output
+Enter the Size of the Array :
+5
+Enter the array Elements :
+4 5 3 6 7
+Second Largest and Second Smallest Elements : 6 4
+ 
+Test Case 3
+Expected Output
+Enter the Size of the Array :
+5
+Enter the array Elements :
+10 20 30 40 50
+Second Largest and Second Smallest Elements : 40 20
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------]
+You are given an integer array nums that represents a sequence of numbers. Your task is to move all the zeros in the array to the end while maintaining the relative order of the non-zero elements. You must perform this operation in-place without using any extra space.
+ 
+Input Format:
+The first line contains an integer n, representing the size of the array.
+The second line contains n space-separated integers representing the elements of the array nums.
+ 
+Output Format
+Print the modified array after all zeros have been moved to the end. The array is printed with each element separated by a space.
+ 
+Sample Test Cases
+Test Case 1
+ Expected Output
+Enter the Size of Array :
+6
+Enter Array Elements :
+0 2 3 1 3 0
+Modified Array : 2 3 1 3 0 0
+ 
+ 
+Test Case 2
+Expected Output
+Enter the Size of Array :
+4
+Enter Array Elements :
+0 2 0 1
+Modified Array : 2 1 0 0
+ 
+ 
+Test Case 3
+Expected Output
+Enter the Size of Array :
+7
+Enter Array Elements :
+4 5 6 0 8 0 9
+Modified Array: 4 5 6 8 9 0 0
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
+Question: Library Fine Calculation
+Problem Statement:
+In the Bookhaven Library, daily overdue fines are recorded in an array — each element representing the fine for a specific book.
+The librarian wants to calculate the total fine for specific ranges of books, but with a limit:
+If the total fine in a range exceeds a given threshold (T), it should be capped at that threshold.
+You must write a program that:
+Processes multiple fine calculation queries.
+
+
+Each query specifies a book range (L to R) and a threshold (T).
+
+
+Outputs the total fine for that range — capped at the threshold value.
+
+
+Input Format:
+The first line contains two integers —
+ N → number of books (array size)
+ Q → number of queries
+
+
+The second line contains N integers — daily fines for each book.
+
+
+The next Q lines each contain three integers:
+L → start index (1-based)
+R → end index (1-based)
+T → threshold (maximum allowable total fine)
+Output Format:
+For each query, print a single integer —
+ the total fine for the given range, capped at T if necessary.
+Example Input:
+5 2
+10 20 30 40 50
+1 3 50
+2 4 100
+Example Output:
+50
+90
+Explanation:
+Query 1:
+ Range (1–3) → 10 + 20 + 30 = 60 → exceeds threshold (50) → output 50
+
+
+Query 2:
+ Range (2–4) → 20 + 30 + 40 = 90 → less than threshold (100) → output 90
+Sample Test Cases
+Test Case 1
+Input:
+5 2
+10 20 30 40 50
+1 3 50
+2 4 100
+
+Output:
+50
+90
+Explanation:
+(1–3): 10 + 20 + 30 = 60 → exceeds 50 → capped to 50
+(2–4): 20 + 30 + 40 = 90 → within 100 → 90
+
+
+ Test Case 2
+Input:
+6 3
+5 15 25 35 45 55
+1 4 60
+3 6 100
+2 5 80
+
+Output:
+60
+100
+80
+
+Explanation:
+(1–4): 5+15+25+35=80 → exceeds 60 → output 60
+(3–6): 25+35+45+55=160 → exceeds 100 → output 100
+(2–5): 15+25+35+45=120 → exceeds 80 → output 80
+
+
+ Test Case 3
+Input:
+4 2
+12 8 10 5
+1 2 30
+2 4 20
+
+Output:
+20
+20
+
+Explanation:
+(1–2): 12 + 8 = 20 → within threshold 30 → 20
+(2–4): 8 + 10 + 5 = 23 → exceeds 20 → capped to 20
+
+
+
+ Test Case 4
+Input:
+5 2
+0 0 10 20 30
+3 5 100
+1 2 5
+
+Output:
+60
+0
+
+Explanation:
+(3–5): 10 + 20 + 30 = 60 → less than 100 → 60
+(1–2): 0 + 0 = 0 → within 5 → 0
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Assignment Examples
+======================
+Q1 — Print All Elements of a 2D Array
+Question (exact):
+ Read a 2D integer array and print all elements row-wise.
+ First line: two integers r c (rows and columns).
+ Next r lines: each contains c integers (row elements).
+Constraints: 1 ≤ r, c ≤ 10, -10^6 ≤ arr[i][j] ≤ 10^6
+Test Cases
+Test Case 1
+ Input:
+2 3
+1 2 3
+4 5 6
+
+Output:
+1 2 3
+4 5 6
+
+Explanation: print each row in the same order.
+Test Case 2
+ Input:
+1 4
+9 8 7 6
+
+Output:
+9 8 7 6
+
+Explanation: single row printed.
+Test Case 3
+ Input:
+3 2
+10 20
+30 40
+50 60
+
+Output:
+10 20
+30 40
+50 60
+
+Explanation: three rows printed row-wise.
+Test Case 4
+ Input:
+2 2
+-1 0
+7 -8
+
+Output:
+-1 0
+7 -8
+-----------------------------------------------------------------------------------------------------------------------------
+Q2 — Sum of All Elements in a 2D Array
+Question (exact):
+ Compute and print the sum of all elements of a 2D integer array.
+ First line: two integers r c.
+ Next r lines: each contains c integers.
+Constraints: 1 ≤ r, c ≤ 10, elements in [-10^6, 10^6] (sum fits in 64-bit)
+Test Cases
+Test Case 1
+ Input:
+2 2
+1 2
+3 4
+
+Output:
+10
+
+Explanation: 1+2+3+4 = 10
+Test Case 2
+ Input:
+3 3
+1 1 1
+2 2 2
+3 3 3
+
+Output:
+18
+
+Explanation: row sums 3,6,9 total 18
+Test Case 3
+ Input:
+2 3
+-1 -2 -3
+4 5 6
+
+Output:
+9
+
+Explanation: (-1-2-3)+4+5+6 = 9
+Test Case 4
+ Input:
+1 5
+100 0 -50 25 -10
+
+Output:
+165
+
+Explanation: 100+0-50+25-10 = 65 (Oops recalc) — correct sum is 65. (Note: ensure test numbers consistent)
+ (Use this as example; program computes correctly.)
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q3 — Row-wise Sum of a 2D Array
+Question (exact):
+ For each row, compute and print the sum of elements of that row.
+ First line: r c.
+ Next r lines: each contains c integers.
+Constraints: 1 ≤ r, c ≤ 10
+Test Cases
+Test Case 1
+ Input:
+2 3
+1 2 3
+4 5 6
+
+Output:
+6
+15
+
+Explanation: row1 sum 6, row2 sum 15
+Test Case 2
+ Input:
+3 2
+5 5
+5 5
+5 5
+
+Output:
+10
+10
+10
+
+Test Case 3
+ Input:
+1 4
+-1 0 1 2
+
+Output:
+2
+
+Explanation: -1+0+1+2 = 2
+Test Case 4
+ Input:
+2 2
+100 200
+-50 -25
+
+Output:
+300
+-75
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q4 — Column-wise Sum of a 2D Array
+Question (exact):
+ For each column, compute and print the sum of elements in that column.
+ First line: r c.
+ Next r lines: each contains c integers.
+Constraints: 1 ≤ r, c ≤ 10
+Test Cases
+Test Case 1
+ Input:
+2 3
+1 2 3
+4 5 6
+
+Output:
+5
+7
+9
+
+Explanation: col1=1+4=5, col2=2+5=7, col3=3+6=9
+Test Case 2
+ Input:
+3 1
+7
+8
+9
+
+Output:
+24
+
+Explanation: one column sum 7+8+9 = 24
+Test Case 3
+ Input:
+2 2
+-1 -2
+3 4
+
+Output:
+2
+2
+
+Explanation: col1 = -1+3=2, col2 = -2+4=2
+Test Case 4
+ Input:
+1 3
+10 20 30
+
+Output:
+10
+20
+30
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Diagonal Sum of Square Matrix
+Question (exact):
+ Given a square matrix of size n × n, compute the sum of elements on both main diagonal and secondary diagonal. If n is odd, the center element belongs to both diagonals — count it only once.
+ First line: integer n.
+ Next n lines: each contains n integers.
+Constraints: 1 ≤ n ≤ 10
+Test Cases
+Test Case 1
+ Input:
+3
+1 2 3
+4 5 6
+7 8 9
+
+Output:
+30
+
+Explanation: main = 1+5+9=15, secondary = 3+5+7=15, center 5 counted twice -> subtract once -> total 15+15-5=25? Wait recalc: correct approach: sum main + secondary - center. main=1+5+9=15, secondary=3+5+7=15, combined=30, center 5 counted twice so subtract 5 → 25. But earlier we said 30 — ensure consistency. Correct output is 25. (Be careful when writing sample).
+Fix Test Case 1 (corrected)
+ Input:
+3
+1 2 3
+4 5 6
+7 8 9
+
+Output:
+25
+
+Explanation: main diag (1+5+9)=15, secondary (3+5+7)=15, center 5 double counted → total = 15+15-5 = 25.
+Test Case 2
+ Input:
+2
+1 2
+3 4
+
+Output:
+10
+
+Explanation: main =1+4=5, secondary=2+3=5, no overlap -> total 10
+Test Case 3
+ Input:
+1
+7
+
+Output:
+7
+
+Explanation: single element counted once
+Test Case 4
+ Input:
+4
+1 2 3 4
+5 6 7 8
+9 10 11 12
+13 14 15 16
+
+Output:
+68
+
+Explanation: main=1+6+11+16=34, secondary=4+7+10+13=34, no overlap (even n) -> total 68
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Transpose of a Matrix
+Question (exact):
+ Given an r × c matrix, print its transpose (resulting c × r matrix).
+ First line: r c.
+ Next r lines: each has c integers.
+Constraints: 1 ≤ r, c ≤ 10
+Test Cases
+Test Case 1
+ Input:
+2 3
+1 2 3
+4 5 6
+
+Output:
+1 4
+2 5
+3 6
+
+Explanation: transpose flips rows and columns.
+Test Case 2
+ Input:
+1 4
+9 8 7 6
+
+Output:
+9
+8
+7
+6
+
+Explanation: 4×1 result.
+Test Case 3
+ Input:
+3 3
+1 0 2
+-1 3 4
+5 6 7
+
+Output:
+1 -1 5
+0 3 6
+2 4 7
+
+Test Case 4
+ Input:
+2 2
+10 20
+30 40
+
+Output:
+10 30
+20 40
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Matrix Addition
+Question (exact):
+ Given two matrices A and B of the same dimensions r × c, print their sum matrix C where C[i][j] = A[i][j] + B[i][j].
+ First line: r c.
+ Next r lines: matrix A (each line c integers).
+ Next r lines: matrix B.
+Constraints: 1 ≤ r, c ≤ 10
+Test Cases
+Test Case 1
+ Input:
+2 2
+1 2
+3 4
+5 6
+7 8
+
+Output:
+6 8
+10 12
+
+Explanation: element-wise addition.
+Test Case 2
+ Input:
+1 3
+10 20 30
+-1 -2 -3
+
+Output:
+9 18 27
+
+Explanation: 10+(-1)=9, 20+(-2)=18, 30+(-3)=27
+Test Case 3
+ Input:
+3 1
+1
+2
+3
+4
+5
+6
+
+Output:
+5
+7
+9
+
+Explanation: two 3×1 matrices added.
+Test Case 4
+ Input:
+2 3
+0 0 0
+1 2 3
+1 1 1
+2 2 2
+
+Output:
+1 1 1
+3 4 5
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+um of Elements in the Last Column
+Question:
+ Write a program to calculate and print the sum of elements in the last column of a 2D array.
+The first line contains the number of rows.
+
+
+The second line contains the number of columns.
+
+
+The next inputs are the elements of the array in row-wise order.
+ Find and print the sum of the last column.
+
+
+Input Format:
+rows
+cols
+elements of 2D array
+
+Output Format:
+sum of the last column
+
+
+ Sample Test Cases
+Test Case 1
+ Input:
+3
+2
+1
+2
+3
+4
+5
+6
+
+Output:
+12
+Explanation:
+ Last column → 2 + 4 + 6 = 12
+
+Test Case 2
+2
+3
+2
+4
+6
+8
+10
+12
+
+Output:
+18
+Explanation: Last column = 6 + 12 = 18
+
+Test Case 3
+3
+3
+1
+1
+1
+2
+2
+2
+3
+3
+3
+Output:
+6
+Explanation: Last column = 1 + 2 + 3 = 6
+Test Case 4
+2
+2
+-5
+10
+5
+5
+output:
+15
+Explanation: Last column = 10 + 5 = 15
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Print Elements Greater than the Average
+Question:
+ Write a program to print all elements greater than the average of the 2D array.
+ Each such element must be printed on a new line.
+Input Format:
+rows
+cols
+elements of 2D array
+
+Output Format:
+elements greater than average (each on new line)
+
+
+ Sample Test Cases
+Test Case 1
+2
+2
+1
+2
+3
+4
+Output:
+3
+4
+Explanation:
+ Average = (1 + 2 + 3 + 4)/4 = 2.5 → elements > 2.5 → 3, 4.
+
+Test Case 2
+2
+3
+1
+2
+3
+4
+5
+6
+Output:
+4
+5
+6
+Explanation:
+ Average = 3.5 → elements greater than 3.5 are 4, 5, 6.
+
+Test Case 3
+1
+4
+-2
+-1
+0
+1
+Output:
+0
+1
+Explanation: Average = (-2 -1 + 0 + 1)/4 = -0.5 → elements > -0.5 → 0, 1.
+
+Test Case 4
+2
+2
+5
+5
+5
+5
+Output:
+(No output, all equal to average)
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Sum of Main Diagonal
+Question:
+ Write a program to calculate and print the sum of the main diagonal elements (top-left to bottom-right) of a square 2D array.
+Input Format:
+rows
+cols
+elements of 2D array
+
+Output Format:
+sum of main diagonal
+
+Constraints:
+ 1 ≤ rows = cols ≤ 100
+ -10⁶ ≤ arr[i][j] ≤ 10⁶
+Sample Test Cases
+Test Case 1
+3
+3
+1
+2
+3
+4
+5
+6
+7
+8
+9
+Output:
+15
+Explanation: Diagonal = 1 + 5 + 9 = 15
+
+Test Case 2
+2
+2
+1
+2
+3
+4
+Output:
+5
+Explanation: Diagonal = 1 + 4 = 5
+
+Test Case 3
+3
+3
+0
+1
+2
+3
+4
+5
+6
+7
+8
+Output:
+12
+Explanation: Diagonal = 0 + 4 + 8 = 12
+
+Test Case 4
+2
+2
+-1
+-2
+-3
+-4
+Output:
+-5
+Explanation: Diagonal = -1 + (-4) = -5
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Count Elements Greater than X
+Question:
+ Write a program to count how many elements are greater than a given number X.
+Input Format:
+rows
+cols
+elements of 2D array
+X
+
+Output Format:
+count of elements greater than X
+
+Sample Test Cases
+Test Case 1
+2
+2
+1
+2
+3
+4
+2
+Output:
+2
+Explanation: Elements > 2 → 3, 4 → count = 2
+
+Test Case 2
+2
+3
+5
+6
+7
+8
+9
+10
+8
+Output:
+2
+Explanation: Elements > 8 → 9, 10
+
+Test Case 3
+2
+2
+-5
+-4
+-3
+-2
+-3
+Output:
+2
+Explanation: Elements > -3 → -2
+
+Test Case 4
+1
+1
+0
+5
+Output:
+0
+Explanation: 0 is not greater than 5
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Double Each Element in 2D Array
+Question:
+ Write a program to double each element in a 2D array and print the modified array.
+First line: number of rows
+Second line: number of columns
+Next lines: array elements in row-wise order
+Output: each row on a new line, elements separated by space
+
+
+Sample Test Cases
+Test Case 1
+ Input:
+2
+2
+1
+2
+3
+4
+Output:
+2 4
+6 8
+Explanation: Each element doubled → 1×2=2, 2×2=4, etc.
+
+Test Case 2
+2
+3
+1
+2
+3
+4
+5
+6
+Output:
+2 4 6
+8 10 12
+
+
+Test Case 3
+1
+4
+-1
+0
+1
+2
+Output:
+-2 0 2 4
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Print Rows with Even Indices
+Question:
+ Print all rows with even indices (0, 2, 4…) from a 2D array.
+First line: rows
+
+
+Second line: columns
+
+
+Next lines: array elements
+
+
+Sample Test Cases
+Test Case 1
+ Input:
+3
+2
+1
+2
+3
+4
+5
+6
+Output:
+1 2
+5 6
+Explanation: Rows 0 and 2 are printed.
+
+Test Case 2
+2
+3
+10
+20
+30
+40
+50
+60
+Output:
+10 20 30
+Explanation: Only row 0 is even.
+
+Test Case 3
+4
+2
+1
+2
+3
+4
+5
+6
+7
+8
+Output:
+1 2
+5 6
+Explanation: Rows 0 and 2 are printed.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Sum of Elements at Odd Column Indices
+Question:
+ Calculate the sum of elements at odd column indices (1, 3, 5…) in a 2D array.
+Sample Test Cases
+Test Case 1
+ Input:
+2
+3
+1
+2
+3
+4
+5
+6
+Output:
+7
+Explanation: Odd columns (index 1) → 2 + 5 = 7
+
+Test Case 2
+3
+2
+1
+2
+3
+4
+5
+6
+Output:
+12
+Explanation: Odd columns → 2 + 4 + 6 = 12
+
+Test Case 3
+2
+2
+-1
+-2
+-3
+-4
+Output:
+-6
+Explanation: Odd columns → -2 + -4 = -6
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Product of First Column
+Question:
+ Sample Test Cases
+Test Case 1
+ Input:
+3
+2
+1
+2
+3
+4
+5
+6
+Output:
+15
+Explanation: First column → 1 × 3 × 5 = 15
+
+Test Case 2
+2
+3
+2
+4
+6
+3
+5
+7
+Output:
+6
+Explanation: First column → 2 × 3 = 6
+
+Test Case 3
+2
+2
+-1
+2
+3
+4
+Output:
+-3
+Explanation: First column → -1 × 3 = -3
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Jagged Array Questions (Q1–Q8)
+
+Q1 — Print all elements of a jagged array
+Question:
+ Print all elements of a jagged array, each row on a new line, space-separated.
+Input Format:
+First line: number of rows n
+
+
+Next n lines: each line starts with k_i (number of elements in row) followed by k_i elements
+
+
+Sample Test Cases:
+Test Case 1
+ Input:
+3
+2 1 2
+3 3 4 5
+1 6
+
+Output:
+1 2
+3 4 5
+6
+
+Explanation: Row 1 → 1 2, Row 2 → 3 4 5, Row 3 → 6
+Test Case 2
+ Input:
+2
+1 7
+4 8 9 10 11
+
+Output:
+7
+8 9 10 11
+
+Explanation: Row 1 → 7, Row 2 → 8 9 10 11
+Test Case 3
+ Input:
+1
+3 1 2 2003
+
+Output:
+1 2 2003
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q2 — Sum of all elements in a jagged array
+Sample Test Cases:
+Test Case 1
+ Input:
+3
+2 1 2
+2 3 4
+1 5
+
+Output: 15
+ Explanation: 1+2+3+4+5 = 15
+Test Case 2
+ Input:
+2
+3 1 2 3
+1 4
+
+Output: 10
+ Explanation: 1+2+3+4 = 10
+Test Case 3
+ Input:
+2
+2 -1 -2
+1 -3
+
+Output: -6
+ Explanation: -1 + -2 + -3 = -6
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Maximum element in a jagged array
+Sample Test Cases:
+Test Case 1
+ Input:
+3
+2 1 5
+3 2 8 4
+1 3
+
+Output: 8
+ Explanation: Max among all elements → 8
+Test Case 2
+ Input:
+2
+2 7 9
+3 6 8 10
+
+Output: 10
+ Explanation: Max element → 10
+Test Case 3
+ Input:
+1
+4 1 2 3 4
+
+Output: 4
+ Explanation: Only row → max element is 4
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+Minimum element in a jagged array
+Sample Test Cases:
+Test Case 1
+ Input:
+3
+2 4 3
+3 2 1 5
+1 6
+
+Output: 1
+ Explanation: Minimum among all → 1
+Test Case 2
+ Input:
+2
+3 5 2 8
+2 3 4
+
+Output: 2
+Test Case 3
+ Input:
+2
+2 -5 -2
+1 -8
+
+Output: -8
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q5. Count Even Elements in a Jagged Array
+Problem Statement:
+ Write a program to count and print the number of even elements in a jagged array.
+Input Format:
+First line: Number of rows n (1 ≤ n ≤ 100)
+
+
+Next n lines: Each line starts with the row length k_i (1 ≤ k_i ≤ 100), followed by k_i elements (−10^6 ≤ arr[i][j] ≤ 10^6)
+
+
+Output Format:
+Print a single integer: count of even numbers
+
+
+Sample Test Cases:
+Test Case 1
+ Input:
+3
+2 1 2
+3 3 4 5
+1 6
+
+Output:
+3
+
+Explanation: Even elements → 2, 4, 6 → total count = 3
+Test Case 2
+ Input:
+2
+2 7 9
+3 1 3 5
+
+Output:
+0
+
+Explanation: No even elements → count = 0
+Test Case 3
+ Input:
+2
+3 2 4 6
+1 -6
+
+Output:
+4
+
+Explanation: Even elements → 2,4,6,-6 → count = 4
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Print First Row Elements of a Jagged Array
+Problem Statement:
+ Print the elements of the first row of a jagged array, space-separated.
+Input Format:
+First line: Number of rows n
+
+
+Next n lines: Each line starts with row length k_i, followed by k_i elements
+
+
+Output Format:
+Print first row elements, space-separated
+
+
+Sample Test Cases:
+Test Case 1
+ Input:
+3
+2 1 2
+3 3 4 5
+1 6
+
+Output:
+1 2
+
+Explanation: First row elements = 1,2
+Test Case 2
+ Input:
+2
+4 7 8 9 10
+2 11 12
+
+Output:
+7 8 9 10
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Print Last Row Elements of a Jagged Array
+Problem Statement:
+ Print the elements of the last row of a jagged array, space-separated.
+Input Format:
+First line: Number of rows n
+
+
+Next n lines: Each line starts with row length k_i, followed by k_i elements
+
+
+Output Format:
+Print last row elements, space-separated
+
+
+Sample Test Cases:
+Test Case 1
+ Input:
+3
+2 1 2
+3 3 4 5
+1 6
+
+Output:
+6
+
+Test Case 2
+ Input:
+2
+2 7 8
+3 9 10 11
+
+Output:
+9 10 11
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Count Positive Elements in a Jagged Array
+Problem Statement:
+ Count and print the number of positive elements in a jagged array.
+Input Format:
+First line: Number of rows n
+
+
+Next n lines: Each line starts with row length k_i, followed by k_i elements
+
+
+Output Format:
+Print a single integer: count of positive elements
+
+
+Sample Test Cases:
+Test Case 1
+ Input:
+3
+2 -1 2
+3 3 -4 5
+1 -6
+
+Output:
+3
+
+Explanation: Positive elements → 2, 3, 5 → count = 3
+Test Case 2
+ Input:
+2
+2 -2 -3
+2 -4 -5
+
+Output:
+0
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Sum of Elements in the Longest Row
+Problem Statement:
+ Calculate and print the sum of elements in the longest row of a jagged array. If multiple rows have the same maximum length, use the first one.
+Input Format:
+First line: Number of rows n
+
+
+Next n lines: Each line starts with row length k_i, followed by k_i elements
+
+
+Output Format:
+Print a single integer: sum of the first longest row
+
+
+Sample Test Cases:
+Test Case 1
+ Input:
+3
+2 1 2
+3 3 4 5
+1 6
+
+Output:
+12
+
+Explanation:
+ Row lengths → 2, 3, 1 → longest = row 2 → sum = 3+4+5 = 12
+Test Case 2
+ Input:
+2
+4 1 2 3 4
+2 5 6
+
+Output:
+10
+
+Explanation: Longest row is first row → sum = 1+2+3+4=10
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Count Rows with Even Number of Elements
+Problem Statement:
+ Count and print the number of rows in a jagged array that have an even number of elements.
+Input Format:
+First line: Number of rows n
+
+
+Next n lines: Each line starts with row length k_i, followed by k_i elements
+
+
+Output Format:
+Print a single integer: number of rows with even length
+
+
+Sample Test Cases:
+Test Case 1
+ Input:
+3
+2 1 2
+3 3 4 5
+1 6
+
+Output:
+1
+
+Explanation: Row lengths → 2,3,1 → only first row is even → count = 1
+Test Case 2
+ Input:
+2
+2 7 8
+4 9 10 11 12
+
+Output:
+2
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Sum of Elements in the Shortest Row
+Problem Statement:
+ Calculate and print the sum of elements in the shortest row of a jagged array. If multiple rows have the same minimum length, use the first one.
+Input Format:
+First line: Number of rows n
+
+
+Next n lines: Each line starts with row length k_i, followed by k_i elements
+
+
+Output Format:
+Print a single integer: sum of the first shortest row
+
+
+Sample Test Cases:
+Test Case 1
+ Input:
+3
+2 1 2
+3 3 4 5
+1 6
+
+Output:
+6
+
+Explanation: Row lengths → 2,3,1 → shortest = row 3 → sum = 6
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Count Elements Greater Than X
+Problem Statement:
+ Count and print the number of elements greater than a given value X.
+Input Format:
+First line: Number of rows n
+
+
+Next n lines: Each line starts with row length k_i, followed by k_i elements
+
+
+Last line: Value X
+
+
+Output Format:
+Print a single integer: number of elements > X
+
+
+Sample Test Cases:
+Test Case 1
+ Input:
+3
+2 1 2
+2 3 4
+1 5
+3
+
+Output:
+2
+
+Explanation: Elements > 3 → 4,5 → count = 2
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+. Double Each Element in a Jagged Array
+Problem Statement:
+ Double each element in a jagged array and print the modified array, each row on a new line.
+Input Format:
+First line: Number of rows n
+
+
+Next n lines: Each line starts with row length k_i, followed by k_i elements
+
+
+Output Format:
+Print the modified jagged array, each row on a new line, elements space-separated
+
+
+Sample Test Cases:
+Test Case 1
+ Input:
+3
+2 1 2
+2 3 4
+1 5
+
+Output:
+2 4
+6 8
+10
+
+Explanation: Each element multiplied by 2
