@@ -1157,63 +1157,261 @@ Input:
 Output:
  Invalid Condition
 ============================================================================================
-// happy number--->
-// A number is called a Happy Number if:
-Replace the number with the sum of squares of its digits
-Repeat the process
-If it becomes 1 → Happy Number
-If it loops endlessly → Not Happy
+Question-1) Write a Java program to check whether a given number is a Strong Number or not.
+Definition
+A Strong Number is a number whose sum of the factorials of its digits is equal to the original number.
+Formula
+If a number has digits d1,d2,d3,...d_1, d_2, d_3, ...d1​,d2​,d3​,...,
+Strong Number if:
+d1!+d2!+d3!+⋯=Original Numberd_1! + d_2! + d_3! + \cdots = \text{Original Number}d1​!+d2​!+d3​!+⋯=Original Number
+Example
+145
+Calculation 
+1! + 4! + 5!
+= 1 + 24 + 120
+= 145
+Output 
+145 is a Strong Number 
+Since the sum of the factorials of its digits is equal to the original number, 145 is a Strong Number. 
+Test Cases
+Test Case 1
+Input
+145 
+output
+145 is a Strong Number 
+Test Case 2
+Input
+123 
+Calculation 
+1! + 2! + 3!
+= 1 + 2 + 6
+= 9 
+Output 
+123 is not a Strong Number 
 
-19--> 1,9 -->1+81-->82
---> 8, 2-->64+4-->68
---> 6, 8 --->36+64-->100
--->1,0,0-->1,0,0-->1+0+0-->1
+Question-2)Write a Java program to check whether a given number is a Neon Number or not.
+Definition
+A Neon Number is a number where the sum of the digits of its square is equal to the original number.
+Formula:
+Sum of digits of (n²) = n
+Then the number is called a Neon Number.
+Example
+Input:
+ 9
+Calculation:
+ 9² = 81
+8 + 1 = 9
+Output:
+ 9 is a Neon Number
+Since the sum of the digits of its square is equal to the original number, 9 is a Neon Number.
+Test Cases
+Test Case 1
+Input:
+ 9
+Output:
+ 9 is a Neon Number
+Test Case 2
+Input:
+ 1
+Calculation:
+ 1² = 1
+1 = 1
+Output:
+ 1 is a Neon Number
+Test Case 3
+Input:
+ 10
+Calculation:
+ 10² = 100
+1 + 0 + 0 = 1
+Output:
+ 10 is not a Neon Number
+Question-3)Write a Java program to check whether a given number is a Perfect Number or not.
+Definition
+A Perfect Number is a number whose sum of all its proper divisors (excluding the number itself) is equal to the original number.
+Formula:
+Sum of Proper Divisors = Number
+Then the number is called a Perfect Number.
+Example
+Input:
+ 6
+Calculation:
+Factors of 6 are:
+ 1, 2, 3, 6
+Proper divisors of 6:
+ 1 + 2 + 3 = 6
+Output:
+ 6 is a Perfect Number
+Since the sum of its proper divisors is equal to the original number, 6 is a Perfect Number.
+Test Cases
+Test Case 1
+Input:
+ 6
+Output:
+ 6 is a Perfect Number
+Test Case 2
+Input:
+ 28
+Calculation:
+Factors of 28 are:
+ 1, 2, 4, 7, 14, 28
+Proper divisors:
+ 1 + 2 + 4 + 7 + 14 = 28
+Output:
+ 28 is a Perfect Number
+Test Case 3
+Input:
+ 12
+Calculation:
+Factors of 12 are:
+ 1, 2, 3, 4, 6, 12
+Proper divisors:
+ 1 + 2 + 3 + 4 + 6 = 16
+Output:
+ 12 is not a Perfect Number
+Question-4)Write a Java program to check whether a given number is an Automorphic Number or not.
+Definition
+An Automorphic Number is a number whose square ends with the same digits as the original number.
+Formula:
+If the last digits of (Number²) are equal to the Number, then it is called an Automorphic Number.
+Example
+Input:
+ 25
+Calculation:
+25² = 625
+The last two digits of 625 are 25.
+Output:
+ 25 is an Automorphic Number
+Since the square of the number ends with the same digits as the original number, 25 is an Automorphic Number.
+Test Cases
+Test Case 1
+Input:
+ 25
+Calculation:
+25² = 625
+Last two digits = 25
+Output:
+ 25 is an Automorphic Number
+Test Case 2
+Input:
+ 76
+Calculation:
+76² = 5776
+Last two digits = 76
+Output:
+ 76 is an Automorphic Number
+Test Case 3
+Input:
+ 12
+Calculation:
+12² = 144
+Last two digits = 44
+44 ≠ 12
+Output:
+ 12 is not an Automorphic Number
 
-4->16-->37-58->89->64+81->145-->1+16+25->42->16+4->20->4
+Question-5)Write a Java program to check whether a given number is a Spy Number or not.
+Definition
+A Spy Number is a number in which the sum of its digits is equal to the product of its digits.
+Formula:
+Sum of Digits = Product of Digits
+Then the number is called a Spy Number.
+Example
+Input:
+ 1124
+Calculation:
+Sum of digits:
+ 1 + 1 + 2 + 4 = 8
+Product of digits:
+ 1 × 1 × 2 × 4 = 8
+Output:
+ 1124 is a Spy Number
+Since the sum of its digits is equal to the product of its digits, 1124 is a Spy Number.
+Test Cases
+Test Case 1
+Input:
+ 1124
+Calculation:
+Sum of digits:
+ 1 + 1 + 2 + 4 = 8
+Product of digits:
+ 1 × 1 × 2 × 4 = 8
+Output:
+ 1124 is a Spy Number
+Test Case 2
+Input:
+ 123
+Calculation:
+Sum of digits:
+ 1 + 2 + 3 = 6
+Product of digits:
+ 1 × 2 × 3 = 6
+Output:
+ 123 is a Spy Number
+Test Case 3
+Input:
+ 145
+Calculation:
+Sum of digits:
+ 1 + 4 + 5 = 10
+Product of digits:
+ 1 × 4 × 5 = 20
+10 ≠ 20
+Output:
+ 145 is not a Spy Number
 
-Given a number:
-Reverse only the even digits
-Keep odd digits in same position
- Example:
- Input: 123456
- Even digits → 2,4,6 → reversed → 6,4,2
- Output → 163452
-
- Problem 3: Product of Digits Until Single Digit (Digital Root Variant)
- Description:
-Keep multiplying digits of a number until it becomes a single digit.
- Example:
- Input: 679
- 6×7×9 = 378 → 3×7×8 = 168 → 1×6×8 = 48 → 4×8 = 32 → 3×2 = 6
-
- Description:
-A number is a Spy Number if:
-  Sum of digits == Product of digits
-Example:
- 1124 → Sum = 1+1+2+4 = 8
- Product = 1×1×2×4 = 8 
-
- Problem 6: Check if Number is Neon Number
- Description:
-A number is Neon if:
-  Sum of digits of its square = number
-Example:
- 9 → 9² = 81 → 8+1 = 9 
-
-Problem 7: Swap First and Last Digit
- Description:
-Swap the first and last digit of a number.
- Example:
- Input: 12345 → Output: 52341
-
- 8. Strong Number
- Sum of factorial of digits = number
- Example: 145 → 1! + 4! + 5! = 145
-
-
-10. Check Automorphic Number
- Number whose square ends with same digits
- Example: 25 → 625
+Question-6)Write a Java program to check whether a given number is a Happy Number or not.
+Definition
+A Happy Number is a number that eventually reaches 1 when replaced repeatedly by the sum of the squares of its digits.
+If the process ends at 1, the number is called a Happy Number. Otherwise, it is not a Happy Number.
+Example
+Input:
+ 19
+Calculation:
+1² + 9² = 1 + 81 = 82
+8² + 2² = 64 + 4 = 68
+6² + 8² = 36 + 64 = 100
+1² + 0² + 0² = 1
+Output:
+ 19 is a Happy Number
+Since the process eventually reaches 1, 19 is a Happy Number.
+Test Cases
+Test Case 1
+Input:
+ 19
+Calculation:
+1² + 9² = 82
+8² + 2² = 68
+6² + 8² = 100
+1² + 0² + 0² = 1
+Output:
+ 19 is a Happy Number
+Test Case 2
+Input:
+ 7
+Calculation:
+7² = 49
+4² + 9² = 97
+9² + 7² = 130
+1² + 3² + 0² = 10
+1² + 0² = 1
+Output:
+ 7 is a Happy Number
+Test Case 3
+Input:
+ 20
+Calculation:
+2² + 0² = 4
+4² = 16
+1² + 6² = 37
+3² + 7² = 58
+5² + 8² = 89
+8² + 9² = 145
+1² + 4² + 5² = 42
+4² + 2² = 20
+(The process repeats and never reaches 1)
+Output:
+ 20 is not a Happy Number
 
 ============================================================================================================================================
 Array Programs
