@@ -2963,3 +2963,127 @@ Borrow the first book and try to borrow it again (to test availability logic).
 Return the first book and try to return it again (to test return logic).
 Finally, display the updated information of the first book.
 -------------------------------------------------------------------------------------------
+Day-14 : Constructors
+---------------------
+Question 1: Student Enrollment System
+Question:
+ In the bustling School of Learnville, administrator Clara manages student records using a Student class.
+ She needs a parameterized constructor to initialize a student’s roll number and name when a new student is enrolled with specific details.
+ This ensures that each student object is created with valid data, avoiding manual setting of fields after creation.
+ Your task is to write a Java program that defines a Student class with a parameterized constructor accepting a roll number (integer) and name (string).
+ Include a method to display the student’s details and a main method to create and print a student object based on input values.
+Testcase-1
+Input:
+101
+Amit
+
+Output:
+Roll Number: 101
+Name: Amit
+
+Testcase-2
+Input:
+102
+Priya
+
+Output:
+Roll Number: 102
+Name: Priya
+
+Testcase-3
+Input:
+103
+Rahul
+
+Output:
+Roll Number: 103
+Name: Rahul
+-------------------------------------------------------------------------------------
+Question 2: Greenwood High Registration
+Question:
+ At Greenwood High School, the administration is launching an online portal to manage student registrations.
+ Each student has a name, roll number, and grade level (1 to 12).
+ The system must ensure that the name is not empty, the roll number is positive, and the grade level is valid.
+ If any input is invalid, the constructor should throw an exception.
+ Create a method showProfile to display the student’s details.
+
+Testcase-1
+Input:
+Alice Brown
+101
+10
+
+Output:
+Name: Alice Brown, Roll Number: 101, Grade: 10
+
+Testcase-2
+Input:
+Ravi Kumar
+0
+9
+
+Output:
+Error: Roll number must be positive
+
+Testcase-3
+Input:
+Clara Davis
+103
+13
+
+Output:
+Error: Grade level must be between 1 and 12
+
+Testcase-4
+Input:
+David Lee
+104
+8
+
+Output:
+Name: David Lee, Roll Number: 104, Grade: 8
+-----------------------------------------------------------------------------------------
+Question 3: ZoomCar Rentals
+Question:
+ ZoomCar Rentals manages vehicle bookings.
+ Each car has a brand, model, and rental price per day.
+ Validate that brand and model are not empty and price is positive.
+ If invalid, throw an exception.
+ Create method displayCarInfo() to show car details.
+Testcase-1
+Input:
+Toyota
+Camry
+50.0
+
+Output:
+Brand: Toyota, Model: Camry, Price per Day: 50.00
+
+Testcase-2
+Input:
+Honda
+Accord
+0.0
+
+Output:
+Error: Rental price must be positive
+
+Testcase-3
+Input:
+Ford
+Mustang
+75.0
+
+Output:
+Brand: Ford, Model: Mustang, Price per Day: 75.00
+
+Testcase-4
+Input:
+Hyundai
+Venue
+30.0
+
+Output:
+Brand: Hyundai, Model: Venue, Price per Day: 30.00
+----------------------------------------------------------------------------
+
