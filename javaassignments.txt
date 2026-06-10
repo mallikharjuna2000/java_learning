@@ -3423,4 +3423,166 @@ Explanation:
 Average = (98 + 99 + 100) / 3 = 99
 Student at index 1 = 99 → "high" → 99 + 5 = 104 → capped at 100
 -------------------------------------------------------------------------------------------------
+Day-15 Part-2 Recusrsion examplees
+--------------------------------------
+Problem statement-1)
+—-----------------------------
+At CodeCamp, learner Mia is creating a Java program to generate Fibonacci numbers for a sequence project.
+ She needs a recursive method to compute the nth Fibonacci number, where each number is the sum of the two preceding ones:
+F(0) = 0  
+F(1) = 1  
+F(n) = F(n-1) + F(n-2)
+
+The method should handle base cases and ensure results fit within constraints.
+ Mia wants to call this method from main() to test multiple inputs.
+ The recursive approach should break down the problem into smaller subproblems.
+ With a coding contest approaching, Mia needs this method to be correct and efficient.
+
+ Input Format
+First line: An integer n (index in Fibonacci sequence).
+
+
+ Output Format
+A long integer: nth Fibonacci number.
+
+
+
+ Testcases
+Testcase 1
+Input
+5
+Output
+5
+
+Testcase 2
+Input
+10
+Output
+55
+
+Testcase 3
+Input
+0
+Output
+0
+----------------------------------------------------------------------------------------
+Problem statement-2)
+—-----------------------------
+At NumberLab, analyst Jake is building a Java program to compute the sum of digits in a number.
+ He needs a recursive method to add up all digits — for example:
+123 → 1 + 2 + 3 = 6
+
+The method should:
+use division and modulo operations to extract digits,
+include a base case for single-digit numbers, and
+reduce the number in each recursive call.
+
+
+Jake wants to call this method from main() to process multiple inputs.
+ With a data analysis task due, Jake needs this method to be accurate and efficient.
+
+ Input Format
+First line: An integer n (number to sum digits).
+
+
+ Output Format
+An integer: sum of digits in n.
+
+
+Testcases
+Testcase 1
+Input
+123
+Output
+6
+
+Testcase 2
+Input
+9876
+Output
+30
+
+Testcase 3
+Input
+0
+Output
+0
+--------------------------------------------------------------------------------------------
+Problem statement-3)
+—-----------------------------
+At MathWorks, student Sophie is developing a Java program to compute powers for her algebra class.
+ She needs a recursive method to calculate xⁿ (x raised to the power n),
+ where each recursive call reduces the exponent by 1.
+The method should:
+handle base cases (n = 0 → 1),
+ensure results fit within safe limits,
+and multiply x by the result of x^(n-1) recursively.
+
+
+Sophie wants to test multiple inputs using main().
+ With a math quiz approaching, she needs this recursive method to be reliable and accurate.
+
+ Input Format
+First line: Two integers x and n representing the base and exponent.
+ Output Format
+A long integer: value of xⁿ.
+
+
+Testcases
+Testcase-1
+Input
+2 5
+Output
+32
+
+Testcase-2
+Input
+3 4
+Output
+81
+
+Testcase-3
+Input
+5 0
+Output
+1
+--------------------------------------------------------------------------------------
+Problem statement-4)
+—-----------------------------
+At StudyWell, teacher Ava is creating a Java program to teach students about summing natural numbers.
+ She needs a recursive method to compute the sum of the first n natural numbers
+ (e.g., for n = 5 → sum = 1 + 2 + 3 + 4 + 5 = 15).
+The method should:
+handle the base case (n = 0 → 0),
+reduce the problem by adding n to the result of sum(n-1).
+
+
+Ava wants to call this method from main() to demonstrate to her class.
+ With a lesson plan due, Ava needs this method to be clear, correct, and easy to understand.
+
+ Input Format
+First line: An integer n (number of terms).
+Output Format
+An integer: sum of first n natural numbers.
+
+
+Testcases
+Testcase-1
+Input
+5
+Output
+15
+
+Testcase-2
+Input
+10
+Output
+55
+
+Testcase-3
+Input
+0
+Output
+0
+--------------------------------------------------------------------------------------------------
 
