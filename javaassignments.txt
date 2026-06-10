@@ -3086,4 +3086,341 @@ Venue
 Output:
 Brand: Hyundai, Model: Venue, Price per Day: 30.00
 ----------------------------------------------------------------------------
+Day-15 User defineed methods and reecusrion
+=================================================
+1)At BrewCafe, barista Mia is creating a Java program to apply discounts on coffee orders.
+ She needs a static method to calculate a shop-wide discount based on total orders and a non-static method to compute a discount for a specific order based on its amount.
+The static method, called from main(), applies a 10% discount, while the non-static method applies a 5% discount for orders under $50 and 15% for orders $50 or more.
+Both methods must ensure inputs are non-negative and discounts don’t exceed 100.
+ With a promotion running, Mia needs these methods to process discounts accurately.
+Can you help Mia write a Java class with these methods called from main()?
+Input Format
+First line: An integer totalOrders (total order amount for static method)
+Second line: An integer orderAmount (specific order amount for instance method)
+ Output Format
+Two integers: 
+static discount (10% of totalOrders) 
+and instance discount (5% or 15% of orderAmount)
+
+Testcases
+ Testcase - 1
+Input:
+100
+40
+Output:
+10 2
+
+Testcase - 2
+Input:
+200
+60
+Output:
+20 9
+
+ Testcase - 3
+Input:
+1000
+1000
+Output:
+100 100
+--------------------------------------------------------------------------------------------
+Problem statement-2
+—------------------------------
+At FitLife Gym, trainer Jake is building a Java program to track calories burned.
+ He needs:
+A static method to compute total calories burned across all members based on exercise hours.
+A non-static method to calculate calories for a specific member based on their exercise type (e.g., cardio or strength).
+
+
+ The static method (called from main()) uses 100 calories/hour.
+  The non-static method uses 120 calories/hour for cardio and 80 calories/hour for strength.
+  Both methods must validate inputs and ensure calories don’t exceed 1000.
+With a fitness challenge ongoing, Jake needs these methods to keep tracking accurate.
+ Can you help Jake write a Java class with these methods called from main()?
+Input Format
+First line: An integer totalHours (hours for static method)
+Second line: An integer hours (hours for instance method)
+Third line: A string exerciseType ("cardio" or "strength")
+
+ Output Format
+Two integers: static calories (hours × 100) and instance calories (cardio: hours × 120, strength: hours × 80)
+
+Testcases
+ Testcase-1
+Input:
+5
+3
+cardio
+Output:
+500 360
+Explanation:
+Static calories = 5 × 100 = 500
+Instance calories = 3 × 120 = 360
+
+
+Testcase-2
+Input:
+12
+10
+strength
+Output:
+1000 800
+Explanation:
+Static calories = 12 × 100 = 1200 → capped to 1000
+Instance calories = 10 × 80 = 800
+
+
+ Testcase-3
+Input:
+15
+9
+cardio
+Output:
+1000 1000
+Explanation:
+Static calories = 15 × 100 = 1500 → capped to 1000
+Instance calories = 9 × 120 = 1080 → capped to 1000
+-----------------------------------------------------------------------------------------------
+Problem statement-3)
+—------------------------------
+ At HopeFund, volunteer Ava is creating a Java program to match donations.
+ She needs:
+A static method to calculate a matched amount for total donations.
+A non-static method to match donations for a specific donor based on their donation type (either "individual" or "corporate").
+
+
+ The static method (called from main()) doubles the input.
+  The non-static method triples individual donations and quadruples corporate donations.
+  Both methods must validate inputs and ensure matched amounts don’t exceed 10000.
+With a fundraising event nearing, Ava needs these methods to keep records accurate.
+ Can you help Ava write a Java class with these methods called from main()?
+Input Format
+First line: An integer totalDonation (amount for static method)
+Second line: An integer donation (amount for instance method)
+Third line: A string donorType ("individual" or "corporate")
+Output Format
+Two integers: static matched amount (donation × 2) and instance matched amount (individual: donation × 3, corporate: donation × 4)
+
+Testcases
+ Testcase-1
+Input:
+3000
+2000
+individual
+Output:
+6000 6000
+Explanation:
+Static matched amount = 3000 × 2 = 6000
+Instance matched amount = 2000 × 3 = 6000
+
+
+Testcase-2
+Input:
+5000
+3000
+corporate
+Output:
+10000 10000
+Explanation:
+Static matched amount = 5000 × 2 = 10000
+Instance matched amount = 3000 × 4 = 12000 → capped to 10000
+
+
+Testcase-3
+Input:
+8000
+4000
+individual
+Output:
+10000 10000
+Explanation:
+Static matched amount = 8000 × 2 = 16000 → capped to 10000
+Instance matched amount = 4000 × 3 = 12000 → capped to 10000
+--------------------------------------------------------------------------------------------
+Problem statement-4)
+—-----------------------------
+At GameZone Arcade, player Liam is developing a Java program to calculate game points.
+ He needs:
+A static method to compute total points across all players, and
+
+
+A non-static method to calculate points for a specific game type (either "puzzle" or "action").
+
+
+ The static method, called from main(), awards 10 points per game.
+  The non-static method awards 15 points per puzzle game and 20 points per action game.
+  Both methods must validate inputs and ensure points don’t exceed 10000.
+With a tournament ongoing, Liam needs these methods to keep scores accurate.
+ Can you help him write a Java class with these methods called from main()?
+Input Format
+First line: An integer totalGames (games for static method)
+Second line: An integer games (games for instance method)
+Third line: A string gameType ("puzzle" or "action")
+
+Output Format
+Two integers: static points (games × 10) and instance points (puzzle: games × 15, action: games × 20)
+
+Testcases
+ Testcase-1
+Input:
+300
+200
+puzzle
+Output:
+3000 3000
+Explanation:
+Static points = 300 × 10 = 3000
+Puzzle points = 200 × 15 = 3000
+
+
+Testcase-2
+Input:
+800
+600
+action
+Output:
+8000 10000
+Explanation:
+Static points = 800 × 10 = 8000
+Action points = 600 × 20 = 12000 → capped at 10000
+
+
+Testcase-3
+Input:
+1200
+1000
+puzzle
+Output:
+10000 10000
+Explanation:
+Static points = 1200 × 10 = 12000 → capped at 10000
+Puzzle points = 1000 × 15 = 15000 → capped at 10000
+--------------------------------------------------------------------------------------------------
+Problem statement-5)
+—-----------------------------
+At GadgetHub, manager Alex is developing a Java program to calculate inventory prices.
+ He needs:
+A static method to compute the total price of all items in an array.
+A non-static method to update a specific item’s price based on its category ("electronics" or "appliances").
+
+
+ The static method, called from main(), sums the entire array.
+  The non-static method multiplies the price by 1.1 for electronics and 1.2 for appliances.
+  Both methods must validate inputs and ensure prices don’t exceed 10000.
+With a sale nearing, Alex needs these methods to keep prices accurate.
+ Can you help Alex write a Java class with these methods called from main()?
+Input Format
+First line: An integer n (array size, 1 ≤ n ≤ 100)
+Second line: n space-separated integers (item prices)
+Third line: An integer index (item to update, 0 ≤ index < n)
+Fourth line: A string category ("electronics" or "appliances")
+
+Output Format
+Two integers: 
+1. Static total price (sum of array)
+2. Updated instance price at the given index (rounded down)
+
+Testcases
+ Testcase-1
+Input:
+5
+1000 1500 1200 800 500
+2
+electronics
+Output:
+5000 1320
+Explanation:
+Total price = 1000 + 1500 + 1200 + 800 + 500 = 5000
+Updated price = 1200 × 1.1 = 1320
+
+
+Testcase-2
+Input:
+4
+2000 2500 3000 4000
+1
+appliances
+Output:
+11500 3000
+Explanation:
+Total = 2000 + 2500 + 3000 + 4000 = 11500 → exceeds 10000 → becomes 0 (validation rule)
+Updated = 2500 × 1.2 = 3000
+
+
+ Testcase-3
+Input:
+3
+9000 800 100
+0
+electronics
+Output:
+9900 9900
+Explanation:
+Total = 9000 + 800 + 100 = 9900
+Updated = 9000 × 1.1 = 9900
+--------------------------------------------------------------------------
+Problem statement-6)
+—-----------------------------
+At StudyWell School, teacher Mia is building a Java program to adjust student grades.
+ She needs:
+A static method to compute the average grade from an array.
+
+
+A non-static method to adjust a specific student’s grade based on their performance (e.g., "high" or "low").
+
+
+ The static method, called from main(), averages the array.
+  The non-static method adds 5 marks for high performers and subtracts 5 marks for low performers (but not below 0).
+  Both methods must validate inputs and ensure grades don’t exceed 100.
+With report cards due, Mia needs these methods to keep grades accurate.
+ Can you help Mia write a Java class with these methods called from main()?
+Input Format
+First line: An integer n (array size, 1 ≤ n ≤ 50)
+Second line: n space-separated integers (grades)
+Third line: An integer index (student to adjust, 0 ≤ index < n)
+Fourth line: A string performance ("high" or "low")
+Output Format
+Two integers:
+1. Static average grade (rounded down)
+2. Updated instance grade at index
+
+Testcases
+ Testcase-1
+Input:
+5
+70 80 90 60 75
+2
+high
+Output:
+75 95
+Explanation:
+Average = (70 + 80 + 90 + 60 + 75) / 5 = 75
+Student at index 2 = 90 → "high" → 90 + 5 = 95
+
+
+Testcase-2
+Input:
+4
+50 60 40 30
+3
+low
+Output:
+45 25
+Explanation:
+Average = (50 + 60 + 40 + 30) / 4 = 45
+Student at index 3 = 30 → "low" → 30 - 5 = 25
+
+
+Testcase-3
+Input:
+3
+98 99 100
+1
+high
+Output:
+99 100
+Explanation:
+Average = (98 + 99 + 100) / 3 = 99
+Student at index 1 = 99 → "high" → 99 + 5 = 104 → capped at 100
+-------------------------------------------------------------------------------------------------
 
