@@ -5,22 +5,39 @@ public class Box {
 	double height;
 	double depth;
 
-// instance method
+	public Box() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Box(double width, double height, double depth) {
+		super();
+		this.width = width;
+		this.height = height;
+		this.depth = depth;
+	}
+
+	public Box(Box anotherBox) {
+		height = anotherBox.height;
+		width = anotherBox.width;
+		depth = anotherBox.depth;
+	}
+
+	// instance method
 	public void volume() {
-		System.out.println("Box Height : " + height);
-		System.out.println("Box Width : " + width);
-		System.out.println("Box Depth : " + depth);
-		double volume = width * depth * height;
+		System.out.println("Box Height : " + this.height);
+		System.out.println("Box Width : " + this.width);
+		System.out.println("Box Depth : " + this.depth);
+		double volume = this.width * this.depth * this.height;
 		System.out.println("Box Volume is : " + volume);
 	}
 
 	public static void main(String[] args) {
 		Box mybox1 = new Box();
 		mybox1.volume();
-		Box mybox2 = new Box();
-		mybox2.height = 10.0;
-		mybox2.width = 12.0;
-		mybox2.depth = 2.0;
+		Box mybox2 = new Box(10.0, 5.0, 2.0);
 		mybox2.volume();
+		Box mybox3 = new Box(mybox2);
+		mybox3.volume();
 	}
 }
