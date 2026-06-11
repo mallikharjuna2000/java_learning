@@ -4027,5 +4027,52 @@ Explanation
 Method 1 → (2000+3000+4000+1000+500)=10500×0.1=1050 → capped at 1000
 Method 2 → 10000×0.2=2000 → capped at 1000
 Method 3 → (2000+4000+6000)=12000×0.1+20=1220 → capped at 1000
+
+problem statement-6)
+--------------------------
+Assignment Question Upto all topics in oop
+=========================================================
+Problem Statement:
+Create a Java class called Product that represents a product in an online or physical store. Each product has the following properties:
+productId (int)
+productName (String)
+price (double)
+quantity (int)
+
+
+
+ Functional Requirements:
+1. Constructors
+Create two constructors:
+One that accepts all fields (productId, productName, price, quantity)
+Another that accepts only productId and productName, and initializes price to 0.0 and quantity to 1.
+
+
+2. Method Overloading
+Create two overloaded methods named updateQuantity():
+updateQuantity(int quantity) → Sets the product quantity.
+updateQuantity(int quantity, boolean add) → Adds to the current quantity if add is true, else replaces it.
+
+
+3. Inventory Actions
+addStock(int qty) → Adds given quantity to stock (like deposit).
+removeStock(int qty) → Removes quantity from stock, only if available (like withdrawal).
+
+
+4. Discount Logic (Auto Applied)
+Based on current stock quantity, apply discount:
+If quantity >= 6 → 15% discount
+If quantity >= 3 and < 6 → 10% discount
+If quantity < 3 → 5% discount
+5. Calculations
+getTotalCost() → Returns total cost (price × quantity)
+getDiscountAmount() → Returns discount amount
+getFinalPrice() → Returns final price after discount
+6. Display Method
+printProductDetails() → Displays all product info including:
+Product ID, Name, Price per unit, Quantity
+Discount %, Discount amount
+Final payable amount
+
 =========================================================================================================
 
