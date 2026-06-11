@@ -3585,4 +3585,447 @@ Input
 Output
 0
 --------------------------------------------------------------------------------------------------
+Day-16 Method Overloading and Constructor Overloading examples
+==============================================================
+problem statement-1)
+======================
+Scenario
+At Cafe JavaBrew, barista Neha is creating a Java program to calculate discounts for coffee orders.
+ She needs overloaded methods to compute discounts based on:
+ 1️ The amount only,
+ 2️ The amount and type of customer (regular or loyal), and
+ 3️ The amount with an extra bonus.
+Additionally, Neha wants to use overloaded constructors —
+ one that initializes only the amount,
+ and another that initializes both the amount and type.
+Discount rules:
+For method 1 → 10% of amount
+For method 2 → 5% for “regular”, 15% for “loyal”
+For method 3 → (10% of amount) + 5
+The discount should not exceed ₹100.
+
+
+Your task is to write a Java program to calculate these discounts and print results accordingly.
+
+Input Format
+First line: Integer amount (for method 1)
+Second line: Integer amount2 and string type (for method 2)
+Third line: Integer amount3 (for method 3)
+Fourth line: Integer amount4 (for constructor 1)
+Fifth line: Integer amount5 and string type2 (for constructor 2)
+
+Output Format
+Line 1: Discount from method 1
+Line 2: Discount from method 2
+Line 3: Discount from method 3
+Line 4: Amount from constructor 1
+Line 5: Amount from constructor 2
+
+Testcase 1
+Input
+800
+1000 regular
+600
+1200
+1500 loyal
+
+Output
+80
+50
+65
+1200
+1500
+
+Testcase 2
+Input
+500
+700 loyal
+400
+1000
+900 regular
+
+Output
+50
+100
+45
+1000
+900
+
+Testcase 3
+Input
+200
+200 regular
+300
+400
+500 loyal
+Output
+20
+10
+35
+400
+500
+-------------------------------------------------------------------------------------------------------------
+problem statement-2)
+======================
+At HopeFund, volunteer Ava is creating a Java program to match donations.
+ She needs a class with overloaded methods to compute matched amounts based on donation, donor type, or both, and overloaded constructors to initialize donor details (ID only, or ID and type).
+The overloaded methods, called from main(), compute:
+One with donation × 2
+Another with individual (donation × 3) or corporate (donation × 4)
+And another with donation × 2 + 100
+
+
+Constructors set the donor ID and optionally the type.
+ Ava needs matches capped at 10,000.
+ With a fundraising event nearing, accuracy is key.
+Can you help Ava write a Java class with overloaded methods and constructors?
+Input Format
+First line: An integer donation (amount for method 1)
+Second line: An integer donation2 and string type ("individual" or "corporate") for method 2
+Third line: An integer donation3 for method 3
+Fourth line: An integer id for constructor 1
+Fifth line: An integer id2 and string type2 for constructor 2
+
+Output Format
+Three integers: match from method 1 (donation × 2), 
+                method 2 (individual: donation2 × 3, corporate: donation2 × 4), 
+                method 3 (donation × 2 + 100)
+Two integers: donor IDs from both constructors
+
+Testcase-1
+Input:
+2000
+1500 individual
+1000
+111
+222 corporate
+
+Output:
+4000
+4500
+2100
+111
+222
+Explanation:
+Method 1 → 2000 × 2 = 4000
+Method 2 → individual → 1500 × 3 = 4500
+Method 3 → 1000 × 2 + 100 = 2100
+Constructors → IDs = 111, 222
+
+
+Testcase-2
+Input:
+4000
+3000 corporate
+5000
+101
+202 individual
+
+Output:
+8000
+10000
+10000
+101
+202
+Explanation:
+Method 1 → 4000 × 2 = 8000
+Method 2 → corporate → 3000 × 4 = 12000 → capped at 10000
+Method 3 → 5000 × 2 + 100 = 10100 → capped at 10000
+Constructors → IDs = 101, 202
+
+
+Testcase-3
+Input:
+3500
+2500 partner
+4500
+555
+777 corporate
+
+Output:
+7000
+10000
+9100
+555
+777
+Explanation:
+Method 1 → 3500 × 2 = 7000
+Method 2 → invalid type (“partner”) → defaults to corporate calculation → 2500 × 4 = 10000 (capped)
+Method 3 → 4500 × 2 + 100 = 9100
+Constructors → IDs = 555, 777
+-----------------------------------------------------------------------------------------------------------
+problem statement-3)
+======================
+At WorkWell Inc., manager Zoe is creating a Java program to calculate overtime pay.
+ She needs a class with overloaded methods to compute pay based on hours, role, or both, and overloaded constructors to initialize employee details (ID only, or ID and role).
+The overloaded methods, called from main(), compute:
+Method 1: hours × 20
+Method 2: staff → hours × 15, manager → hours × 25
+Method 3: hours × 20 + 30
+
+
+Constructors set the employee ID and optionally the role.
+ Zoe needs the pay capped at 1000.
+ With payroll processing soon, accuracy is critical.
+Input Format
+First line: An integer hours (hours for method 1)
+Second line: An integer hours2 and string role ("staff" or "manager") for method 2
+Third line: An integer hours3 for method 3
+Fourth line: An integer id for constructor 1
+Fifth line: An integer id2 and string role2 for constructor 2
+Output Format
+Three integers: pay from method 1, method 2, and method 3
+Two integers: employee IDs from both constructors
+
+Testcase-1
+Input:
+20
+30 staff
+25
+101
+102 manager
+
+Output:
+400
+450
+530
+101
+102
+Explanation:
+Method 1 → 20 × 20 = 400
+Method 2 → staff → 30 × 15 = 450
+Method 3 → 25 × 20 + 30 = 530
+Constructors → IDs = 101, 102
+
+
+Testcase-2
+Input:
+60
+40 manager
+70
+201
+202 staff
+
+Output:
+1000
+1000
+1000
+201
+202
+Explanation:
+Method 1 → 60 × 20 = 1200 → capped at 1000
+Method 2 → manager → 40 × 25 = 1000 → exact cap
+Method 3 → 70 × 20 + 30 = 1430 → capped at 1000
+Constructors → IDs = 201, 202
+
+
+Testcase-3
+Input:
+10
+15 executive
+30
+301
+302 manager
+
+Output:
+200
+375
+630
+301
+302
+
+Explanation:
+Method 1 → 10 × 20 = 200
+Method 2 → invalid role “executive” defaults to manager rate (15 × 25 = 375)
+Method 3 → 30 × 20 + 30 = 630
+Constructors → IDs = 301, 302
+-----------------------------------------------------------------------------------------------
+problem statement-4)
+======================
+Scenario:
+At GadgetHub, manager Alex is developing a Java program to calculate inventory prices.
+ He needs a class with overloaded methods to compute total prices based on:
+An array of prices
+A single price with category (electronics or appliances)
+Both (array + bonus 100)
+
+
+He also needs overloaded constructors:
+One constructor initializes inventory ID only
+Another initializes inventory ID and category
+
+
+Business rules:
+For electronics → price × 1.1
+For appliances → price × 1.2
+Add a 100 bonus in the third method
+All results are capped at 10000
+
+
+With a sale nearing, accuracy is crucial!
+ Help Alex implement this using method overloading and constructor overloading.
+Input Format
+First line: n (number of items)
+Second line: n space-separated integers (prices)
+Third line: price and category (electronics/appliances)
+Fourth line: n2 (number of items for 3rd method)
+Fifth line: n2 space-separated integers
+Sixth line: id1 (for first constructor)
+Seventh line: id2 and category2 (for second constructor)
+Output Format
+method1_result
+method2_result
+method3_result
+id1
+id2
+
+Test Case 1
+Input
+3
+1000 2000 3000
+4000 electronics
+2
+500 600
+101
+202 appliances
+
+Output
+6000
+4400
+1200
+101
+202
+Explanation
+Method 1 → 1000 + 2000 + 3000 = 6000
+Method 2 → 4000 × 1.1 = 4400
+Method 3 → (500 + 600) + 100 = 1200
+Constructor 1 → ID = 101
+Constructor 2 → ID = 202
+
+
+Test Case 2
+Input
+4
+3000 4000 5000 2000
+2500 appliances
+3
+1500 1800 1900
+111
+222 electronics
+
+Output
+10000
+3000
+5300
+111
+222
+Explanation
+Method 1 → 3000 + 4000 + 5000 + 2000 = 14000 → capped at 10000
+Method 2 → 2500 × 1.2 = 3000
+Method 3 → (1500 + 1800 + 1900) + 100 = 5300
+IDs: 111 and 222
+-----------------------------------------------------------------------------------------
+problem statement-5)
+======================
+MusicFest Ticket Discount Calculator
+At MusicFest, organizer Sarah is creating a Java program to apply ticket discounts.
+She needs a class with overloaded methods to compute total discounts from:
+An array of ticket prices
+A single ticket price and type (early or regular)
+Both (array + 20 bonus)
+
+
+She also needs overloaded constructors:
+One initializes ticket ID only
+Another initializes ticket ID and type
+
+
+Discount Rules:
+Method 1 → array sum × 0.1
+Method 2 → early → price × 0.2, regular → price × 0.05
+Method 3 → array sum × 0.1 + 20
+All values are floored (use Math.floor) and capped at 1000
+
+
+Sarah needs accuracy as the concerts are selling out fast.
+Input Format
+First line: Integer n (number of tickets)
+Second line: n space-separated integers (ticket prices)
+Third line: Integer price and String type ("early" or "regular") for method 2
+Fourth line: Integer n2 and n2 space-separated integers for method 3
+Fifth line: Integer id (for constructor 1)
+Sixth line: Integer id2 and String type2 (for constructor 2)
+Output Format
+Three integers — discount from:
+1️ Method 1 (array sum × 0.1)
+2️ Method 2 (early ×0.2 / regular ×0.05)
+3️ Method 3 (array sum × 0.1 + 20)
+Two integers — ticket IDs from both constructors
+Test Case 1
+Input
+3
+100 200 300
+400 early
+2
+500 600
+101
+202 regular
+
+Output
+60
+80
+130
+101
+202
+Explanation
+Method 1: (100+200+300) × 0.1 = 600 × 0.1 = 60
+Method 2: 400 × 0.2 = 80 (early ticket)
+Method 3: (500+600) × 0.1 + 20 = 1100 × 0.1 + 20 = 130
+IDs: 101, 202
+
+
+Test Case 2
+Input
+4
+400 500 600 700
+800 regular
+3
+200 300 400
+301
+401 early
+
+Output
+220
+40
+90
+301
+401
+Explanation
+Method 1 → (400+500+600+700)=2200×0.1=220
+Method 2 → 800×0.05=40 (regular)
+Method 3 → (200+300+400)=900×0.1+20=90
+IDs: 301, 401
+
+
+Test Case 3
+Input
+5
+2000 3000 4000 1000 500
+10000 early
+3
+2000 4000 6000
+111
+222 regular
+
+Output
+1000
+1000
+1000
+111
+222
+Explanation
+Method 1 → (2000+3000+4000+1000+500)=10500×0.1=1050 → capped at 1000
+Method 2 → 10000×0.2=2000 → capped at 1000
+Method 3 → (2000+4000+6000)=12000×0.1+20=1220 → capped at 1000
+=========================================================================================================
 
