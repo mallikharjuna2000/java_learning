@@ -1,40 +1,43 @@
 package com.codegnan.oop;
 
+import java.util.Scanner;
+
 public class Car {
-	private String modeel;
-	private String year;
-	private String color;
+	private String model;
+	private int year;
 
-	public Car() {
-		this("","");
-		System.out.println("0 para");
-		// TODO Auto-generated constructor stub
-	}
-
-	public Car(String modeel, String year, String color) {
-		System.out.println("3 para");
-		this.modeel = modeel;
+	public Car(String model, int year) {
+		super();
+		this.model = model;
 		this.year = year;
-		this.color = color;
 	}
 
-	public Car(String year, String color) {
-		this("","","");
-		System.out.println("2 para");
+	public String getModel() {
+		return model;
+	}
+
+	public void setModel(String model) {
+		this.model = model;
+	}
+
+	public int getYear() {
+		return year;
+	}
+
+	public void setYear(int year) {
 		this.year = year;
-		this.color = color;
-	}
-
-	public void dispolayCarDetails() {
-		System.out.println("Model : " + modeel);
-		System.out.println("Year : " + year);
-		System.out.println("Color : " + color);
 	}
 
 	public static void main(String[] args) {
-		Car c1 = new Car("seira","2019","red");
-		c1.dispolayCarDetails();
-
+		Car c1 = new Car("toyota camry", 2022);
+		Scanner scanner = new Scanner(System.in);
+		String userEnteredModel = scanner.nextLine();
+		c1.setModel(userEnteredModel);
+		int userEnteredYear = scanner.nextInt();
+		c1.setYear(userEnteredYear);
+		System.out.println("Model : "+c1.getModel());
+		System.out.println("Year : "+c1.getYear());
+		scanner.close();
 	}
 
 }
