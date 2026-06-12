@@ -4076,3 +4076,334 @@ Final payable amount
 
 =========================================================================================================
 
+Day-17 Encapsulation
+=====================
+probleem statement-1
+========================
+Assignment / Exam Question on Encapsulation (Java)
+Question:
+Define a class called Employee in Java using the principles of encapsulation. The class should have the following private data members:
+employeeId (integer)
+name (String)
+salary (double)
+The class must include:
+A constructor to initialize all data members.
+Getter and setter methods for each private variable.
+Validation in the setSalary() method to ensure salary is positive.
+A method named displayEmployeeInfo() to display employee details.
+Then, write a Main class to:
+Create an object of Employee
+Display initial values using displayEmployeeInfo()
+Modify the employee's name and salary using setter methods
+Print updated details using getter methods
+
+
+Note: Demonstrate proper use of encapsulation by ensuring direct access to private fields is not allowed.
+----------------------------------------------------------------------------------------------------
+Problem statement-2
+---------------------
+At SmartAirConditioner, engineer Sophia is developing a Java program to regulate room temperature levels automatically.
+She needs a class named AirConditioner with:
+• A private integer field temperature initialized to 24
+• A setter method with the following rules:
+
+Temperature Rules
+• If the input value is greater than 40, set temperature to 40
+• If the input value is -1, reset temperature to default value 24
+• Ignore any other negative values
+• Otherwise, update temperature normally
+
+Constraints
+1 <= N <= 100
+-500 <= update <= 500
+
+Input Format
+The first line contains an integer N representing the number of updates.
+The next N lines contain one integer each representing the temperature update.
+
+Output Format
+Print the final temperature value.
+
+Test Case-1
+Input
+4
+50
+-1
+-10
+18
+Output
+18
+
+Explanation
+50 → Greater than 40 → Set temperature to 40
+-1 → Reset temperature to default value 24
+-10 → Negative value → Ignore
+18 → Valid value → Update temperature to 18
+Final Temperature = 18
+
+Test Case-2
+Input
+2
+100
+-1
+Output
+24
+Explanation
+100 → Greater than 40 → Set temperature to 40
+-1 → Reset temperature to default value 24
+Final Temperature = 24
+
+Test Case-3
+Input
+3
+-10
+-20
+-30
+Output
+24
+Explanation
+All values are negative and not equal to -1
+All updates are ignored
+Initial temperature remains 24
+---------------------------------------------------------------------------------------------------------
+Problem statement-3
+A smart Mobile Data Recharge System manages internet data limits using strict encapsulation rules to prevent invalid storage values.
+Create a class with:
+• A private integer variable dataBalance
+• A public setter method to update the value safely
+
+Data Balance Rules
+• If the input value is negative, set dataBalance to 0
+• If the input value exceeds 5000, set dataBalance to 5000
+• Otherwise, store the value normally
+
+Constraints
+-10000 <= N <= 10000
+Time Limit: 2 seconds
+
+Input Format
+A single integer representing the attempted data balance update.
+
+Output Format
+Print the final stored data balance.
+
+Test Case-1
+Input
+6000
+Output
+5000
+
+Explanation
+6000 → Greater than 5000
+Set dataBalance to maximum limit 5000
+Final Output = 5000
+
+Test Case-2
+Input
+-500
+Output
+0
+Explanation
+-500 → Negative value detected
+Set dataBalance to 0
+Final Output = 0
+
+Test Case-3
+Input
+2500
+Output
+2500
+Explanation
+2500 → Valid value within range
+Store value normally
+Final Output = 2500
+
+----------------------------------------------------------------------------------------------------------
+Problem statement-4)
+At CityLibrary, librarian Emma is developing a Java program to calculate fines for overdue books.
+ She needs a class with:
+Private variables for bookID and overdueDays
+Getters and setters to access and modify values safely
+Methods to compute three types of fines:
+
+
+ Fine Methods:
+fineByDays(int days) → days × 5
+fixedFine() → always 10
+fineByDaysPlusFixed(int days) → days × 5 + 10
+
+
+ Additional Requirement:
+All fines must be capped at 1000 (maximum limit)
+
+
+This ensures billing does not overflow or produce unrealistic values during periods of high overdue returns.
+Input Format
+First line  : bookID (integer)
+Second line : overdueDays (integer)
+Third line  : days2 → for fineByDays()
+Fourth line : dummy integer → for fixedFine()
+Fifth line  : days3 → for fineByDaysPlusFixed()
+
+Output Format
+Output 1: fineByDays(days2)
+Output 2: fixedFine()
+Output 3: fineByDaysPlusFixed(days3)
+Output 4: bookID (via getter)
+Output 5: overdueDays (via getter)
+
+Sample TestCase–1
+➤ Input
+101
+10
+5
+0
+3
+➤ Output
+25
+10
+25
+101
+10
+ Explanation
+fineByDays(5) → 5 × 5 = 25
+fixedFine() → 10
+fineByDaysPlusFixed(3) → (3 × 5) + 10 = 25
+Print bookID → 101
+Print overdueDays → 10
+
+
+Sample TestCase–2
+➤ Input
+200
+20
+10
+0
+5
+➤ Output
+50
+10
+35
+200
+20
+ Explanation
+fineByDays(10) → 10 × 5 = 50
+fixedFine() → 10
+fineByDaysPlusFixed(5) → (5 × 5) + 10 = 35
+Print bookID → 200
+Print overdueDays → 20
+
+
+Sample TestCase–3
+➤ Input
+300
+50
+20
+0
+10
+➤ Output
+100
+10
+60
+300
+50
+
+ Explanation
+fineByDays(20) → 20 × 5 = 100
+fixedFine() → 10
+fineByDaysPlusFixed(10) → (10 × 5) + 10 = 60
+Print bookID → 300
+Print overdueDays → 50
+
+--------------------------------------------------------------------------
+Problem statement-5)
+ Scenario Question
+At FitLife Gym, trainer Jake is building a Java program to track daily steps.
+ He needs a class with:
+Private variables for memberID and steps
+Getters and setters
+Methods to compute calories burned:
+
+
+ Calculation Methods
+calcFromSteps(int steps) → steps × 0.05 (rounded down to integer)
+calcFixed() → always 10 calories
+calcStepsPlusFixed(int steps) → steps × 0.05 + 10 (rounded down)
+
+
+ Additional Requirement
+Maximum calories must be capped at 1000
+This ensures safe calorie tracking during fitness challenges.
+Input Format
+First line  : memberID
+Second line : steps (for setter)
+Third line  : steps2 (for method 1)
+Fourth line : dummy input for method 2
+Fifth line  : steps3 (for method 3)
+
+Output Format
+calcFromSteps(steps2)
+calcFixed()
+calcStepsPlusFixed(steps3)
+memberID (getter)
+steps (getter)
+
+Sample TestCase–1
+➤ Input
+101
+1000
+2000
+0
+3000
+➤ Output
+100
+10
+160
+101
+1000
+ Explanation
+2000 × 0.05 = 100
+Fixed = 10
+(3000 × 0.05) + 10 = 160
+memberID = 101
+steps = 1000
+
+
+Sample TestCase–2
+➤ Input
+200
+5000
+4000
+0
+2000
+➤ Output
+200
+10
+110
+200
+5000
+ Explanation
+4000 × 0.05 = 200
+10 fixed
+2000 × 0.05 + 10 = 110
+
+
+Sample TestCase–3
+➤ Input
+300
+10000
+20000
+0
+10000
+➤ Output
+1000
+10
+510
+300
+10000
+Explanation
+20000 × 0.05 = 1000 (capped)
+10 fixed
+10000 × 0.05 + 10 = 510
+===================================================================================================================
+
