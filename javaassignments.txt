@@ -4407,3 +4407,182 @@ Explanation
 10000 × 0.05 + 10 = 510
 ===================================================================================================================
 
+Day-18 Inheritance and Super keyword super w.r.t to inheritance
+====================================================================
+Problem Statement-1)
+A banking app uses inheritance to manage accounts. Create an Account class with a constructor that initializes a 'bal' field, and a SavingsAccount subclass that calls 'super(bal)' to initialize the parent. If the balance is strictly less than 100, the interest must be forced to 0 regardless of the input provided.
+Constraints
+1 <= balance <= 10000
+0 <= interest <= 100
+Input Format
+Two integers, balance and interest, each on a new line.
+Output Format
+An integer representing the sum of the balance and the applied interest.
+Sample Test Cases
+Input
+50
+20
+Expected Output
+50
+Input
+1
+5
+Expected Output
+1
+Input
+10000
+100
+Expected Output
+10100
+Input
+100
+5
+Expected Output
+105
+----------------------------------------------------------------------------------------------------------------------------
+Problem Statement-2)
+A hardware factory initializes units in three stages: a Base unit with power P, a Boost unit that adds B to it, and a Super unit that multiplies the result by M. Write a program using constructor chaining where each class passes values to its parent using the super keyword. The Super unit must set the final power to 0 if the multiplier M is negative.
+Constraints
+0 <= P, B <= 1000
+-100 <= M <= 1000
+Input Format
+Three integers P, B, and M on separate lines.
+Output Format
+A single integer representing the final calculated power.
+Sample Test Cases
+Input
+5
+2
+3
+Expected Output
+21
+Input
+10
+10
+-5
+Expected Output
+0
+Input
+0
+50
+2
+Expected Output
+100
+Input
+100
+100
+100
+Expected Output
+20000
+----------------------------------------------------------------------------------------------------------------------
+Problem Statement-3)
+A manufacturing system calculates power load through a hierarchy of Machine -> Engine -> Drill. Each class in the hierarchy adds its own consumption to the inherited value during object creation. Implement this using constructor chaining where each constructor uses the 'super' keyword to pass values upward, and the final Drill object displays the total cumulative power.
+Constraints
+Input values are integers between -10^6 and 10^6.
+Total Time Limit: 2s
+Input Format
+Three integers representing base power, engine power, and drill power.
+Output Format
+A single integer representing the total sum.
+Sample Test Cases
+Input
+5
+5
+5
+Expected Output
+15
+Input
+0
+0
+0
+Expected Output
+0
+Input
+1000
+2000
+3000
+Expected Output
+6000
+Input
+-10
+20
+30
+Expected Output
+40
+----------------------------------------------------------------------------------------------------------
+Problem Statement-4)
+A device registry system tracks hardware brands and models using inheritance. Create a base class Device and a subclass Smartphone where the Smartphone constructor uses super() to pass the brand name to the parent. If the brand input is 'None', the subclass must pass the string 'Generic' to the superclass constructor instead.
+Constraints
+Input strings will not exceed 50 characters.
+Total Time Limit: 2s
+Input Format
+Two lines containing the brand and the model.
+Output Format
+Two lines starting with 'Brand: ' and 'Model: '.
+Sample Test Cases
+Input
+None
+Pixel7
+Expected Output
+Brand: Generic
+Model: Pixel7
+Input
+Apple
+iPhone15
+Expected Output
+Brand: Apple
+Model: iPhone15
+Input
+None
+BasicPhone
+Expected Output
+Brand: Generic
+Model: BasicPhone
+Input
+Motorola
+EdgePlus
+Expected Output
+Brand: Motorola
+Model: EdgePlus
+---------------------------------------------------------------------------------------------------------------------------
+Problem Statement-5)
+A manufacturing plant tracks hardware via a three-level inheritance hierarchy: Electronic (grandparent), Device (parent), and SmartDevice (child). Write a program where the SmartDevice constructor accepts a brand name and storage capacity, utilizing constructor chaining via the 'super' keyword to initialize and print status messages in the correct order. The Electronic constructor must print 'Electronic initialized', the Device constructor must print 'Device initialized: [brand]', and the SmartDevice constructor must print 'SmartDevice initialized: [capacity]GB'.
+Constraints
+1 <= brand length <= 100
+0 <= storage capacity <= 2147483647
+Time Limit: 2.0s
+Input Format
+- Line 1: A string representing the brand.
+- Line 2: An integer representing the storage capacity.
+Output Format
+- Three lines of initialization messages following the order of constructor chaining.
+Sample Test Cases
+Input
+X
+0
+Expected Output
+Electronic initialized
+Device initialized: X
+SmartDevice initialized: 0GB
+Input
+SuperServer
+2147483647
+Expected Output
+Electronic initialized
+Device initialized: SuperServer
+SmartDevice initialized: 2147483647GB
+Input
+Redmi Note 13
+256
+Expected Output
+Electronic initialized
+Device initialized: Redmi Note 13
+SmartDevice initialized: 256GB
+Input
+Apple
+512
+Expected Output
+Electronic initialized
+Device initialized: Apple
+SmartDevice initialized: 512GB
+
