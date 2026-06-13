@@ -1,15 +1,14 @@
 package com.codegnan.oop;
 
-public class Parent extends java.lang.Object{
-	
-	
-	public Parent() {
-		super();
-		System.out.println("Parent class Constructor");
-		// TODO Auto-generated constructor stub
+public class Parent {
+
+	public void property() {
+		System.out.println("cash/gold/house/land");
 	}
-	int x=10;
-	public void methodOne() {
-		System.out.println("method one executed");
+
+//overridden
+	public void marry() {
+		System.out.println("subba lakshmi");
 	}
+
 }
