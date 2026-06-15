@@ -4585,4 +4585,174 @@ Expected Output
 Electronic initialized
 Device initialized: Apple
 SmartDevice initialized: 512GB
+========================================================================================================================
+Day-19 Method Overriding and Dynamic Method Dispatch
+======================================================
+Problem Statement-1)
+A retail system processes discounts based on membership tiers. Create a base class 'Regular' with a method 'compute(double amt)' that returns the amount with a 10% discount. Create a subclass 'Premium' that overrides this method to apply a 20% discount, but only if the amount is strictly greater than 100. Input a double: if it exceeds 500, use dynamic method dispatch to call the 'Premium' version, otherwise use the 'Regular' version, and print the result.
+Constraints
+1 <= amount <= 1000
+Total Time Limit: 2s
+Input Format
+A single double value.
+Output Format
+The result formatted to one decimal place.
+Sample Test Cases
+Input
+400
+Expected Output
+360.0
+Input
+501
+Expected Output
+400.8
+Input
+1000
+Expected Output
+800.0
+Input
+50
+Expected Output
+45.0
+----------------------------------------------------------------------------------------------------------------
+Problem Statement-2)
+A logistics company calculates delivery fees based on distance. Define a class 'Vehicle' with a method 'double getFee(double d)' that returns 'd * 2.0'. Create a subclass 'Truck' that overrides 'getFee' to return '(d * 1.5) + 50.0' only if the distance is greater than 100, otherwise it must return the value from the parent's 'getFee' method using 'super'.
+Constraints
+0 <= distance <= 10000
+Total Time Limit: 2s
+Input Format
+A single double representing the distance.
+Output Format
+The calculated fee as a double.
+Sample Test Cases
+Input
+50.0
+Expected Output
+100.0
+Input
+100.0
+Expected Output
+200.0
+Input
+200.0
+Expected Output
+350.0
+Input
+0.0
+Expected Output
+0.0
+--------------------------------------------------------------------------------------------------------------
+Problem Statement-3)
+An accounting system applies different tax rules based on a user's selected scheme. Create a TaxScheme class with a method calculateTax(double income) that returns 10% tax, and a SpecialTaxScheme subclass that overrides it to return 15% tax if income is greater than 5000, and 0 otherwise. Use a superclass reference and dynamic method dispatch to process N income values and print the total calculated tax.
+Constraints
+1 <= N <= 1000
+0 <= income <= 1000000
+Total Time Limit: 2s
+Input Format
+The first line contains an integer T (0 for Basic, 1 for Special). The second line contains an integer N. The third line contains N space-separated doubles.
+Output Format
+Print the total tax formatted to one decimal place.
+Sample Test Cases
+Input
+0
+2
+4000.0 6000.0
+Expected Output
+1000.0
+Input
+1
+1
+10000.0
+Expected Output
+1500.0
+Input
+0
+1
+0.0
+Expected Output
+0.0
+Input
+1
+3
+2000.0 3000.0 8000.0
+Expected Output
+1200.0
+---------------------------------------------------------------------------------------------------------------
+Problem Statement-4)
+A data processor uses different mathematical models based on an input code. Implement a system where a single base class reference Shape calls a process method that is overridden in subclasses Circle and Square. The Circle subclass returns the value multiplied by 2, Square returns the square of the value, and the base class returns the original value, but all must return 0 if the input is negative.
+Constraints
+Value V will be an integer between -1000 and 1000.
+Total Time Limit: 2s
+Input Format
+Input:
+C
+5
+Output Format
+Output:
+10
+Sample Test Cases
+Input
+S
+4
+Expected Output
+16
+Input
+B
+10
+Expected Output
+10
+Input
+C
+-5
+Expected Output
+0
+Input
+S
+30
+Expected Output
+900
+-------------------------------------------------------------------------------------------------------------
+Problem Statement-5)
+A space station's central hub manages specialized utility bots to maintain efficiency. Create a base class 'Bot' with a method 'process(int power)' and subclasses 'Cleaner' and 'Repairer' that override it. For each input power level, if it is even, create a 'Cleaner' (which returns power * 2), and if it is odd, create a 'Repairer' (which returns power + 50). Use a single 'Bot' reference to invoke the method for each input and output the final sum of all processed values.
+Constraints
+1 <= N <= 100
+0 <= power <= 500
+Input Format
+An integer N followed by N integers representing power levels.
+Output Format
+A single integer representing the total sum.
+Sample Test Cases
+Input
+3
+2
+4
+6
+Expected Output
+24
+Input
+2
+1
+3
+Expected Output
+104
+Input
+1
+0
+Expected Output
+0
+Input
+10
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+Expected Output
+1815
+---------------------------------------------------------------------------------------------------------------------------
 
