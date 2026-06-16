@@ -4756,3 +4756,196 @@ Expected Output
 1815
 ---------------------------------------------------------------------------------------------------------------------------
 
+Day-19 Abstract class and Abstract methods
+-----------------------------------------------
+Problem Statement-1)
+A data stream requires specific processing for integers based on their 1-indexed position. Create an abstract class Base containing a final method isValid (returns true if a number is even) and an abstract method apply. Implement a final class Worker where apply returns the value multiplied by its index if isValid is true, or the value plus its index otherwise.
+Constraints
+1 <= N <= 100
+-1000 <= values <= 1000
+Input Format
+The first line contains N, and the second line contains N space-separated integers.
+Output Format
+N lines each containing one processed integer.
+Sample Test Cases
+Input
+2
+10 11
+Expected Output
+10
+13
+Input
+1
+1
+Expected Output
+2
+Input
+4
+2 2 2 2
+Expected Output
+2
+4
+6
+8
+Input
+2
+-2 -1
+Expected Output
+-2
+1
+------------------------------------------------------------------------------------------------------------
+Problem Statement-2)
+A digital sensor requires a strict processing protocol where even numbers are invalidated and odd numbers undergo a specific calculation. Create an abstract class 'Protocol' with a 'final' method 'handle' that returns -1 for even integers and otherwise calls an 'abstract' method 'transform'. For odd integers, the 'transform' method must return the sum of the digits of the number's square.
+Constraints
+1 <= N <= 100
+0 <= values <= 1000
+Total Time Limit: 2s
+Input Format
+An integer N followed by N integers.
+Output Format
+Each processed result on a new line.
+Sample Test Cases
+Input
+2
+11
+20
+Expected Output
+4
+-1
+Input
+1
+0
+Expected Output
+-1
+Input
+1
+31
+Expected Output
+16
+Input
+5
+1
+2
+7
+8
+9
+Expected Output
+1
+-1
+13
+-1
+9
+----------------------------------------------------------------------------------------------------------
+Problem Statement-3)
+A system for processing secure IDs requires a fixed architectural pattern to ensure data integrity. Create an abstract class named IDProcessor containing an abstract method int compute(int id). Implement a final subclass FinalValidator that overrides compute to return id / 2 if the ID is even, and id * 3 + 1 if the ID is odd.
+Constraints
+0 <= id <= 10000
+Total Time Limit: 2s
+Input Format
+A single integer.
+Output Format
+The integer result of the computation.
+Sample Test Cases
+Input
+10
+Expected Output
+5
+Input
+0
+Expected Output
+0
+Input
+1
+Expected Output
+4
+Input
+10000
+Expected Output
+5000
+-----------------------------------------------------------------------------------------------------------------
+Problem Statement-4)
+A security system requires a base class that forces all tasks to implement their own execution logic while preventing them from modifying the logging procedure. Create an abstract class 'SecureProcess' containing a final method 'logAccess' that prints 'Access logged for: ' followed by a username, and an abstract method 'executeAction' for priority handling. Implement a subclass 'UserTask' where 'executeAction' prints 'High Priority' if the input value is greater than 10, and 'Low Priority' otherwise.
+Constraints
+1 <= Priority <= 1000
+Username will be a single word.
+Total Time Limit: 2s
+Input Format
+A username string and an integer priority value.
+Output Format
+The log message followed by the priority status.
+Sample Test Cases
+Input
+Guest
+5
+Expected Output
+Access logged for: Guest
+Low Priority
+Input
+System
+10
+Expected Output
+Access logged for: System
+Low Priority
+Input
+Manager
+11
+Expected Output
+Access logged for: Manager
+High Priority
+Input
+Root
+1000
+Expected Output
+Access logged for: Root
+High Priority
+-----------------------------------------------------------------------------------------------------------
+Problem Statement-5)
+A signal processing unit requires specific logic to handle data streams. Create an abstract class 'Processor' with an abstract method 'compute(int x)' to force implementation, and a final class 'DataHandler' that extends it to prevent further inheritance. The 'DataHandler' must multiply the input signal by a fixed factor 'k' provided in the constructor. If an input signal value is 0 or less, the system must output 'Error', otherwise output the computed product.
+Constraints
+1 <= N <= 100
+-100 <= K <= 100
+Total Time Limit: 2s
+Input Format
+Line 1 contains N (count) and Line 2 contains K (multiplier). The next N lines contain one integer each.
+Output Format
+N lines of results or 'Error'.
+Sample Test Cases
+Input
+1
+10
+5
+Expected Output
+50
+Input
+2
+100
+0
+-5
+Expected Output
+Error
+Error
+Input
+3
+1
+1
+2
+3
+Expected Output
+1
+2
+3
+Input
+5
+20
+1
+2
+3
+4
+5
+Expected Output
+20
+40
+60
+80
+100
+------------------------------------------------------------------------------------------------------------
