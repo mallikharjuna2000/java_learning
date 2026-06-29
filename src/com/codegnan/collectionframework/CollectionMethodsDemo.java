@@ -1,14 +1,14 @@
 package com.codegnan.collectionframework;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 
-public class CollectionMethodsDemo {
+public class ListMethodsDemo {
 
 	public static void main(String[] args) {
 
-		Collection<Employee> employeeList = new ArrayList<>();
+		List<Employee> employeeList = new ArrayList<>();
 
 		Employee e1 = new Employee(111, "Malli", 60000, "Hyderabad");
 		Employee e2 = new Employee(222, "Arjun", 50000, "Vijayawada");
@@ -16,152 +16,104 @@ public class CollectionMethodsDemo {
 		Employee e4 = new Employee(444, "Rahul", 70000, "Chennai");
 		Employee e5 = new Employee(555, "Ravi", 45000, "Pune");
 
-		// ==================================================
-		// add()
-		// ==================================================
-
-		System.out.println("------------ add() ----------------");
-
 		employeeList.add(e1);
 		employeeList.add(e2);
 		employeeList.add(e3);
 
+		System.out.println("Original List");
 		System.out.println(employeeList);
 
 		// ==================================================
-		// addAll()
+		// add(index, object)
 		// ==================================================
 
-		System.out.println("\n------------ addAll() ----------------");
+		System.out.println("\n---------- add(index,Object) ----------");
 
-		Collection<Employee> moreEmployees = new ArrayList<>();
-
-		moreEmployees.add(e4);
-		moreEmployees.add(e5);
-
-		employeeList.addAll(moreEmployees);
+		employeeList.add(1, e4);
 
 		System.out.println(employeeList);
 
 		// ==================================================
-		// contains()
+		// addAll(index, Collection)
 		// ==================================================
 
-		System.out.println("\n------------ contains() ----------------");
+		System.out.println("\n---------- addAll(index,Collection) ----------");
 
-		System.out.println(employeeList.contains(e2));
+		List<Employee> newEmployees = new ArrayList<>();
+		newEmployees.add(e5);
 
-		// ==================================================
-		// containsAll()
-		// ==================================================
+		employeeList.addAll(2, newEmployees);
 
-		System.out.println("\n------------ containsAll() ----------------");
-
-		System.out.println(employeeList.containsAll(moreEmployees));
+		System.out.println(employeeList);
 
 		// ==================================================
-		// size()
+		// get(index)
 		// ==================================================
 
-		System.out.println("\n------------ size() ----------------");
+		System.out.println("\n---------- get(index) ----------");
 
-		System.out.println(employeeList.size());
-
-		// ==================================================
-		// isEmpty()
-		// ==================================================
-
-		System.out.println("\n------------ isEmpty() ----------------");
-
-		System.out.println(employeeList.isEmpty());
+		System.out.println(employeeList.get(3));
 
 		// ==================================================
-		// iterator()
+		// set(index,Object)
 		// ==================================================
 
-		System.out.println("\n------------ iterator() ----------------");
+		System.out.println("\n---------- set(index,Object) ----------");
 
-		Iterator<Employee> itr = employeeList.iterator();
+		Employee newEmp = new Employee(666, "Kiran", 90000, "Mumbai");
 
-		while (itr.hasNext()) {
-			System.out.println(itr.next());
+		employeeList.set(2, newEmp);
+
+		System.out.println(employeeList);
+
+		// ==================================================
+		// remove(index)
+		// ==================================================
+
+		System.out.println("\n---------- remove(index) ----------");
+
+		employeeList.remove(1);
+
+		System.out.println(employeeList);
+
+		// ==================================================
+		// indexOf(Object)
+		// ==================================================
+
+		System.out.println("\n---------- indexOf(Object) ----------");
+
+		System.out.println(employeeList.indexOf(e3));
+
+		// ==================================================
+		// lastIndexOf(Object)
+		// ==================================================
+
+		System.out.println("\n---------- lastIndexOf(Object) ----------");
+
+		employeeList.add(e3);
+		employeeList.add(e3);
+
+		System.out.println(employeeList);
+
+		System.out.println(employeeList.lastIndexOf(e3));
+
+		// ==================================================
+		// ListIterator
+		// ==================================================
+
+		System.out.println("\n---------- ListIterator Forward ----------");
+
+		ListIterator<Employee> listIterator = employeeList.listIterator();
+
+		while (listIterator.hasNext()) {
+			System.out.println(listIterator.next());
 		}
 
-		// ==================================================
-		// toArray()
-		// ==================================================
+		System.out.println("\n---------- ListIterator Backward ----------");
 
-		System.out.println("\n------------ toArray() ----------------");
-
-		Object[] employees = employeeList.toArray();
-
-		for (Object obj : employees) {
-			System.out.println(obj);
+		while (listIterator.hasPrevious()) {
+			System.out.println(listIterator.previous());
 		}
-
-		// ==================================================
-		// remove()
-		// ==================================================
-
-		System.out.println("\n------------ remove() ----------------");
-
-		employeeList.remove(e3);
-
-		System.out.println(employeeList);
-
-		// ==================================================
-		// removeAll()
-		// ==================================================
-
-		System.out.println("\n------------ removeAll() ----------------");
-
-		employeeList.removeAll(moreEmployees);
-
-		System.out.println(employeeList);
-
-		// ==================================================
-		// retainAll()
-		// ==================================================
-
-		System.out.println("\n------------ retainAll() ----------------");
-
-		Collection<Employee> list1 = new ArrayList<>();
-
-		list1.add(e1);
-		list1.add(e2);
-		list1.add(e3);
-
-		Collection<Employee> list2 = new ArrayList<>();
-
-		list2.add(e2);
-		list2.add(e3);
-		list2.add(e4);
-
-		System.out.println("Before retainAll()");
-		System.out.println(list1);
-
-		list1.retainAll(list2);
-
-		System.out.println("After retainAll()");
-		System.out.println(list1);
-
-		// ==================================================
-		// clear()
-		// ==================================================
-
-		System.out.println("\n------------ clear() ----------------");
-
-		list1.clear();
-
-		System.out.println(list1);
-
-		// ==================================================
-		// isEmpty()
-		// ==================================================
-
-		System.out.println("\n------------ isEmpty() After clear ----------------");
-
-		System.out.println(list1.isEmpty());
 
 	}
 }
